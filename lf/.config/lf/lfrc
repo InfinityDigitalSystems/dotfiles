@@ -1,0 +1,150 @@
+# Basic settings
+# interpreter for shell commands
+set shell sh
+set hidden! true
+set icons true
+# Draws borders
+set drawbox
+# leave some space at the top and the bottom of the screen
+set scrolloff 8
+# use enter for shell commands
+set ifs "\n"
+
+# Set window title
+cmd on-cd &{{
+  # '&' commands run silently in background (which is what we want here),
+  # but are not connected to stdout.
+  # To make sure our escape sequence still reaches stdout we pipe it to /dev/tty
+  printf "\033]0; lf $(pwd | sed "s|$HOME|~|") \007" > /dev/tty
+}}
+
+# also run at startup
+on-cd
+
+# Make is so you can quit with :q
+cmd q quit
+
+
+# custom commands
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+cmd trash ${{
+    set -f
+    if gio trash 2>/dev/null; then
+        gio trash $fx
+    fi
+}}
+
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echo no files to link"
+        exit 0
+    fi
+    case "$mode" in
+        # symbolically copy mode is indicating a soft link
+        copy) ln -sr -t . -- "$@";;
+        # while a move mode is indicating a hard link
+        move) ln -t . -- "$@";;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
+cmd rsync &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                lf -remote "send $id echo $line"
+            done
+            ;;
+        move) mv -n -- "$@" .;;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+# Keybinds
+# clear existing keybinds
+map y
+map d
+map p
+map c
+map u
+
+# Clear and unselect commands
+map cc clear
+map uu unselect
+
+
+
+map <enter> open
+map yy copy
+map pp paste
+map pa rsync
+map pl link
+map dd cut
+map dD delete
+map dT trash
+map D delete
+
+map ad :push %mkdir<space>-p<space>
+map af :push %touch<space>
+
+# Movement
+map gd cd ~/downloads
+map gh cd ~
+map gi cd ~/infinity_cloud/
+map gc cd ~/.config
+map gt cd ~/.local/share/Trash/files
+map gr cd ~/repos/
+
+cmd open-with-gui &$@ $fx ## opens with a gui application outside lf client
+cmd open-with-cli $$@ $fx ## opens with a cli application inside lf client
+map O push :open-with-gui<space> ## input application
+map o push :open-with-cli<space> ## input application
+map R reload
+
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
