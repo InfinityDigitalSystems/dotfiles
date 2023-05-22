@@ -76,6 +76,7 @@ class Widgets:
                 other_current_screen_border=COLORS["white"],
                 other_screen_border=COLORS["grey"],
                 active=COLORS["white"],
+                use_mouse_wheel = False,
                 inactive=COLORS["darkgrey"],
                 spacing =3,
                 margin_y=4,

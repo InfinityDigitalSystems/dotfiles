@@ -80,18 +80,23 @@ def generate_scratchpads(apps):
 
 def get_groups():
     groups = [
-        Group("", layout="columns"),
-        Group("", layout="columns"),
+        Group("󰎦", layout="columns"),
+        Group("󰎩", layout="columns"),
+        Group("󰎬", layout="columns"),
+        Group("󰾔", layout="columns"),
         Group(
-            "",
+            "",
             layout="columns",
             matches=[Match(wm_class="vscodium"), Match(wm_class="emacs")],
         ),
-        Group("", layout="columns", matches=[Match(wm_class="Mail")]),
-        Group(
-            "",
-            layout="columns",
-            matches=[Match(wm_class="signal"), Match(wm_class="discord")],
-        ),
+        Group("󰴃", layout="columns", matches=[Match(wm_class="Mail")]),
+        # Group(
+        #     "",
+        #     layout="columns",
+        #     matches=[Match(wm_class="signal"), Match(wm_class="discord")],
+        # ),
+        Group("󰐋", layout="columns"),
     ]
+    #
+#󰌴󰄸󰌳󰆁󰻩󰡠󰪷󰻧󰾔󰚇
     return groups + SCRATCHPADS
