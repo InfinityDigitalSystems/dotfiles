@@ -1,0 +1,27 @@
+
+configuration {
+  display-drun: "Applications";
+  display-window: "Switch Windows";
+  display-emoji: "Emojis";
+	kb-cancel: "Escape,Control+g,Control+bracketleft,Super+d,Super+Tab,Super+e";
+  kb-select-1: "";
+  kb-select-2: "";
+  kb-select-3: "";
+  kb-select-4: "";
+  kb-select-5: "";
+  kb-select-6: "";
+  kb-select-7: "";
+  kb-select-8: "";
+  kb-select-9: "";
+  kb-select-10: "";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+@theme "~/.config/rofi/themes/infinity-list.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"

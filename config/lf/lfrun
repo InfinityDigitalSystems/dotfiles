@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LFCD="$HOME/.config/lf/lfcd"
+
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
+lfcd "$@"

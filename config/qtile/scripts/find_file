@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+selected=$(find "$HOME" | fzf --preview 'bat --color=always --theme=TwoDark --style=numbers --line-range=:500 {}' --bind=tab:down,btab:up --reverse --header="jump to location")
+
+if [[ -d $selected ]]; then
+  cd "$selected" && lf
+elif [[ -f $selected ]]; then
+  lf "$selected"
+fi

@@ -1,24 +1,28 @@
-## Installing
+> These are my personal dotfiles that I use across my machines I tried to keep everything simple to customise.
 
-You will need `git` and GNU `stow`
+> Some of more notable configs are `Qtile`, `Qutebrowser`, `Neovim`, `lf`
 
-Clone into your `$HOME` directory or `~`
+## Installation
 
-```bash
-git clone https://github.com/captainblue01/dotfiles ~
-```
+> Assumes Arch
 
-Run `stow` to symlink everything or just select what you want
+- run `./arch_package_sync.sh` to install all dependencies plus core utils
+- copy contents from `./config` to `~/.config`
+- copy bashrc and xconfigs from `./other` to home directory (`~`)
+- move the `./scripts` directory to where ever you keep your scripts (make sure it's in your path) 
 
-```bash
-stow */ # Everything (the '/' ignores the README)
-```
+  > I normally add to `~/.local/bin/` & I have this snipped in my .bashrc (avalible in this repo under ./home/.bashrc) (avalible in this repo under `./home/.bashrc`)
+  >
+  > ```bash
+  >  # set PATH so it includes user's private ~/.local/bin if it exists
+  >  if [ -d "$HOME/.local/bin" ] ; then
+  >      PATH="$HOME/.local/bin:$PATH"
+  >  fi
+  > ```
 
-> You will need to `chmod +x` any shells scripts for full functionality
-```bash
-chmod +x ~/.config/qtile/autostart.sh
-chmod +x ~/.config/qtile/refresh_system.sh.sh
-chmod +x ~/.config/lf/lf_kitty_clean
-chmod +x ~/.config/lf/lf_kitty_preview
-```
+## Screenshots
 
+![qtile](https://i.imgur.com/CorPYfL.png) 
+![lf](https://i.imgur.com/mJbSLGT.png) 
+![Qutebrowser](https://i.imgur.com/wdroZeY.png)  
+![neovim](https://i.imgur.com/Rd4OgU9.png) 

@@ -1,0 +1,13 @@
+#!/bin/sh
+# xss-lock xsecurelock &
+light-locker &
+picom &
+nm-applet --indicator &
+clipmenud &
+udiskie -s &
+feh --randomize --bg-fill ~/.config/desktopwallpapers/ &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dunst &
+unclutter &
+nextcloud &
+export CM_LAUNCHER=rofi

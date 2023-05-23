@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg29"
+   sodipodi:docname="audio-volume-medium.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="15.170655"
+     inkscape:cx="-3.1310449"
+     inkscape:cy="10.184135"
+     inkscape:window-width="1920"
+     inkscape:window-height="1172"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g223" />
+  <defs
+     id="defs23">
+    <style
+       id="current-color-scheme"
+       type="text/css">
+   .ColorScheme-Text { color:#dfdfdf; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+  </defs>
+  <g
+     id="g223"
+     transform="matrix(0.52941176,0,0,0.52941176,5.4411765,5.1764706)">
+    <g
+       id="g8726"
+       transform="matrix(1.173404,0,0,1.173404,-1.7672832,-1.850231)">
+      <path
+         style="fill:#f1f1e4;fill-opacity:1"
+         class="ColorScheme-Text"
+         d="m 9.9088826,2.9024839 -5,5 h -3 v 6.0000001 h 3 l 5,5 z m 2.0000004,4 v 8.0000001 c 0,0 3.0002,-1 3,-4 -2e-4,-3.0000001 -3,-4.0000001 -3,-4.0000001 z"
+         id="path25" />
+      <path
+         style="opacity:0.35;fill:#f1f1e4;fill-opacity:1"
+         class="ColorScheme-Text"
+         d="m 12,3 v 2 c 2.86838,0.84571 5,3.06286 5,6 0,2.93714 -2.13163,5.15429 -5,6 v 2 c 3.89455,-0.89143 7,-4.11429 7,-8 0,-3.88571 -3.10545,-7.10857 -7,-8 z"
+         id="path27" />
+    </g>
+  </g>
+</svg>

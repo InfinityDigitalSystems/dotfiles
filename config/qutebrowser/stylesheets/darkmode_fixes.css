@@ -1,0 +1,32 @@
+html select,
+html input[type="submit"]
+{
+    background-color : #202122 !important;
+    color: #F1F1E4 !important;
+}
+
+html select:hover,
+html input[type="submit"]:hover
+{
+    background-color : #2494BA !important;
+}
+
+html * {
+    caret-color: #5B9E2E;
+}
+
+.ytp-gradient-bottom {
+  display:none !important
+}
+
+.md\:bg-vert-light-gradient {
+  display:none !important
+}
+
+::-webkit-scrollbar { width: initial; }
+::-webkit-scrollbar-button {  background-color: #333; }
+::-webkit-scrollbar-track {  background-color: #202122; }
+::-webkit-scrollbar-track-piece { background-color: #222; }
+::-webkit-scrollbar-thumb { background-color: #444; }
+::-webkit-scrollbar-corner { background-color: #333; }
+::-webkit-resizer { background-color: #444; }
