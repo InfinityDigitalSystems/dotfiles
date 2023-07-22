@@ -1,6 +1,7 @@
 > These are my personal dotfiles that I use across my machines I tried to keep everything simple to customise.
 
-> Some of more notable configs are `Qtile`, `Qutebrowser`, `Neovim`, `lf`
+> Some of more notable configs are [Qtile](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qtile), [Qutebrowser](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qutebrowser), [NeoVim](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/nvim), [lf](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/lf) 
+ 
 
 ## Installation
 
@@ -22,7 +23,15 @@
 
 ## Screenshots
 
+### Qtile
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qtile) 
 ![qtile](https://i.imgur.com/CorPYfL.png) 
+### LF
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/lf) 
 ![lf](https://i.imgur.com/mJbSLGT.png) 
+### Qutebrowser
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qutebrowser) 
 ![Qutebrowser](https://i.imgur.com/wdroZeY.png)  
+### NeoVim
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/nvim) 
 ![neovim](https://i.imgur.com/Rd4OgU9.png) 
