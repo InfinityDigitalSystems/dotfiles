@@ -24,14 +24,14 @@
 ## Screenshots
 
 ### Qtile
-[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qtile) 
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qtile) <br>
 ![qtile](https://i.imgur.com/CorPYfL.png) 
 ### LF
-[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/lf) 
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/lf)<br>
 ![lf](https://i.imgur.com/mJbSLGT.png) 
 ### Qutebrowser
-[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qutebrowser) 
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/qutebrowser) <br>
 ![Qutebrowser](https://i.imgur.com/wdroZeY.png)  
 ### NeoVim
-[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/nvim) 
+[link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/nvim) <br>
 ![neovim](https://i.imgur.com/Rd4OgU9.png) 
