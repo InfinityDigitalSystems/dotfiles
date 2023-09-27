@@ -2,6 +2,8 @@
 
 # List of packages from the official repositories
 official_packages=(
+tree
+chromium
 alacritty 
 arandr 
 autorandr
@@ -32,7 +34,7 @@ git
 glib2
 glow
 gnome-keyring 
-gnome-session 
+polkit-gnome
 gnumeric 
 gvfs
 gvfs-smb
@@ -83,7 +85,6 @@ sshfs
 strace
 thunar
 thunar
-thunderbird 
 trash-cli
 ttf-dejavu 
 ttf-jetbrains-mono-nerd 
@@ -104,7 +105,6 @@ zip
 # List of AUR packages
 aur_packages=(
 betterbird-bin
-external-editor-revived
 mcomix 
 xapp-epub-thumbnailer
 wkhtmltopdf-static
@@ -120,10 +120,11 @@ brave-bin
 spotify
 cp-p-git
 calcure
+discord_arch_electron
 )
 
 # Install packages from the official repositories
-sudo pacman -Syu --needed "${official_packages[@]}"
+sudo pacman -Syu --noconfirm --needed "${official_packages[@]}"
 
 # Check if yay is installed, install if necessary
 if ! command -v yay &> /dev/null; then
@@ -136,4 +137,4 @@ if ! command -v yay &> /dev/null; then
 fi
 
 # Install AUR packages using yay
-yay -S --needed "${aur_packages[@]}"
+yay -S --noconfirm --needed "${aur_packages[@]}"

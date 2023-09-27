@@ -3,11 +3,8 @@ if status is-interactive
 end
 # ~/.config/fish/config.fish
 
-# Set Prompt
-function parse_git_branch
-    git branch ^/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-end
-set -g fish_prompt "\e[0m\]\]\W\[\e[35m\](parse_git_branch)\e[34m\] >>\e[0m\] "
+# disable welcome message
+set fish_greeting
 
 
 # set PATH so it includes user's private ~/.local/bin if it exists

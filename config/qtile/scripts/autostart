@@ -2,12 +2,12 @@
 # xss-lock xsecurelock &
 light-locker &
 picom &
-nm-applet --indicator &
+# nm-applet --indicator &
 clipmenud &
-udiskie -s &
+udiskie &
 feh --randomize --bg-fill ~/.config/desktopwallpapers/ &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
 unclutter &
 nextcloud &
-export CM_LAUNCHER=rofi
+slimbookbattery --minimize &

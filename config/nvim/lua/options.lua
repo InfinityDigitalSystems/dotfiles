@@ -41,17 +41,19 @@ o.guifont = "JetBrainsMono:h12"           -- the font used in graphical neovim a
 o.title = true                            -- the font used in graphical neovim applications
 o.titlestring = "NVIM - %<%F%="
 o.titlelen = 100
+o.spelllang = "en_au"
+-- o.spell = true
 
 -- Folding is handled by lua/plugins/folding
-o.foldcolumn = '0' -- '0' is not bad
-o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldcolumn = "0" -- '0' is not bad
+o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
 
-o.shortmess:append "c"
+o.shortmess:append("c")
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
 -- write and save current buffer
-vim.cmd('cnoreabbrev wd w\\|Bdelete')
+vim.cmd("cnoreabbrev wd w\\|Bdelete")
 -- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

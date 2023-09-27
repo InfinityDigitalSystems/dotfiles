@@ -3,7 +3,6 @@ from libqtile.config import Group, ScratchPad, DropDown, Match
 
 
 class Layouts:
-
     def __init__(self, colors, margins):
         self.colors = colors
         self.margins = margins
@@ -18,7 +17,6 @@ class Layouts:
             #     border_normal=self.colors["darkgrey"], border_focus=self.colors["blue"],
             #     single_border_width = 0
             #     ),
-            layout.Floating(),
             layout.Columns(
                 margin=int(self.margins / 3),
                 margin_on_single=self.margins * 2,
@@ -27,12 +25,13 @@ class Layouts:
                 border_normal=self.colors["darkgrey"],
                 border_focus=self.colors["blue"],
             ),
+            layout.Floating(),
         ]
         return layouts
 
     def get_floating_layout(self):
         floating_layout = layout.Floating(
-            border_width=3,
+            border_width=4,
             border_normal=self.colors["darkgrey"],
             border_focus=self.colors["blue"],
             float_rules=[
@@ -52,7 +51,6 @@ class Layouts:
 
 
 class Groups:
-
     def __init__(self):
         self.groups = [
             Group("1", layout="columns"),
@@ -100,8 +98,9 @@ class Groups:
             ),
             DropDown("calendar", "kitty -e cal", **default_dropdown_settings),
             # User Apps
-            DropDown("terminal", f'{apps["terminal"]} -T DTTY',
-                     **default_dropdown_settings),
+            DropDown(
+                "terminal", f'{apps["terminal"]} -T DTTY', **default_dropdown_settings
+            ),
             DropDown(
                 "file_manager",
                 apps["file_manager"],
@@ -120,8 +119,7 @@ class Groups:
                 x=0.35,
                 y=0.0,
             ),
-            DropDown("music_player", apps["music_player"],
-                     **default_dropdown_settings),
+            DropDown("music_player", apps["music_player"], **default_dropdown_settings),
             DropDown(
                 "notes",
                 apps["notes"],

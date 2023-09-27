@@ -1,7 +1,10 @@
-local m = {"lewis6991/gitsigns.nvim"}
+local m = {
+	"lewis6991/gitsigns.nvim",
+	cond = not vim.g.vscode,
+}
 
-m.init = function ()
-  require("gitsigns").setup()
+m.config = function()
+	require("gitsigns").setup()
 end
 
 return m

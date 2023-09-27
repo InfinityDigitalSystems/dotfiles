@@ -49,8 +49,8 @@ widget_defaults = {
     "font": font,
     "fontsize": 12,
     "padding": 6,
-    "background": colors["darker"],
-    "foreground": colors["white"]
+    "background": f'{colors["darker"]}e6',
+    "foreground": colors["white"],
 }
 
 # Boolean Variables

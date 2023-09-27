@@ -1,7 +1,10 @@
-local m = {"nvchad/nvim-colorizer.lua"}
+local m = {
+	"nvchad/nvim-colorizer.lua",
+	cond = not vim.g.vscode,
+}
 
-m.init = function ()
-  require("colorizer").setup()
+m.config = function()
+	require("colorizer").setup()
 end
 
 return m

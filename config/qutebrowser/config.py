@@ -20,14 +20,14 @@ c.statusbar.show = "in-mode"
 c.scrolling.bar = "when-searching"
 
 # Clipboard
-c.content.javascript.can_access_clipboard = True
+c.content.javascript.clipboard = "access-paste"
 
 # Darkmode
-c.colors.webpage.bg = theme.COLORS["darker"]
+# c.colors.webpage.bg = theme.COLORS["darker"]
 # Disabled the chromium engine darkmode
-c.content.user_stylesheets = "./stylesheets/darkmode_fixes.css"
+# c.content.user_stylesheets = "./stylesheets/darkmode_fixes.css"
 c.colors.webpage.preferred_color_scheme = "dark"
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 # c.colors.webpage.darkmode.policy.images = 'never'
 
 # General Settings

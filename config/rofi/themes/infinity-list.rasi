@@ -38,7 +38,7 @@
     active-background: #2494BA;
     urgent-background: #E84545;
     urgent-foreground: #202122;
-    selected-background: #424548;
+    selected-background: #575C60;
     selected-urgent-background: @selected-background;
     selected-active-background: #202122;
     separatorcolor: @input-background;

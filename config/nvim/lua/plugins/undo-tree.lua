@@ -1,7 +1,10 @@
-local m = {"mbbill/undotree"}
+local m = {
+	"mbbill/undotree",
+	cond = not vim.g.vscode,
+}
 
-m.init = function ()
-  vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle,  { noremap = true, silent = true, desc = "UNDO Tree" })
+m.config = function()
+	vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { noremap = true, silent = true, desc = "UNDO Tree" })
 end
 
 return m

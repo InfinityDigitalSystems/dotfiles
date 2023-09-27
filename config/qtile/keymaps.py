@@ -7,7 +7,8 @@ import os
 MOD = "MOD4"  # mod4 = Super / Windows / Command
 
 # Screens
-screen_key = {0: 0, 1: 1, 2: 2}
+# screen_key = {0: 0, 1: 1, 2: 2}
+screen_key = {x: x for x in range(int(os.environ["SCREENS"]))}
 
 try:
     screen_key[0] = int(os.environ["SCREEN_1"])
@@ -39,8 +40,7 @@ class Keybinds:
     def __init__(self):
         self.qtile_keybinds = [
             # Toggle Layouts
-            Key([MOD], "c", lazy.next_layout(),
-                desc="Cylces through the layouts"),
+            Key([MOD], "c", lazy.next_layout(), desc="Cylces through the layouts"),
             Key([MOD], "b", lazy.function(plugins.relabel_group)),
             Key(
                 [MOD],
@@ -48,8 +48,7 @@ class Keybinds:
                 lazy.spawn("light-locker-command -l"),
                 desc="locks the system",
             ),
-            Key([MOD], "f", lazy.window.toggle_floating(),
-                desc="Toggles floating"),
+            Key([MOD], "f", lazy.window.toggle_floating(), desc="Toggles floating"),
             Key(
                 [MOD],
                 "t",
@@ -57,8 +56,7 @@ class Keybinds:
                 desc="Brings all floating windows to the top",
             ),
             # Kill window
-            Key([MOD, "mod1"], "c", lazy.window.kill(),
-                desc="Kill focused window"),
+            Key([MOD, "mod1"], "c", lazy.window.kill(), desc="Kill focused window"),
             # QTILE options
             Key(
                 [MOD, "mod1"],
@@ -193,24 +191,6 @@ class Keybinds:
                 lazy.function(focus_screen, "right"),
                 desc="Switches to previous Screen",
             ),
-            Key(
-                [MOD],
-                "f1",
-                lazy.to_screen(screen_key[0]),
-                desc="Switch to first screen",
-            ),
-            Key(
-                [MOD],
-                "f2",
-                lazy.to_screen(screen_key[1]),
-                desc="Switch to first screen",
-            ),
-            Key(
-                [MOD],
-                "f3",
-                lazy.to_screen(screen_key[2]),
-                desc="Switch to first screen",
-            ),
         ]
 
         self.window_manipulation = [
@@ -275,8 +255,7 @@ class Keybinds:
                     Key([], "f", lazy.group["󱇚"].dropdown_toggle("file_manager")),
                     Key([], "c", lazy.group["󱇚"].dropdown_toggle("calculator")),
                     Key([], "m", lazy.group["󱇚"].dropdown_toggle("music_player")),
-                    Key([], "p", lazy.group["󱇚"].dropdown_toggle(
-                        "password_manager")),
+                    Key([], "p", lazy.group["󱇚"].dropdown_toggle("password_manager")),
                     Key([], "w", lazy.spawn(apps["web_browser"])),
                     Key([], "Return", lazy.spawn(apps["terminal"])),
                     Key([], "e", lazy.spawn(apps["email"])),
@@ -284,7 +263,6 @@ class Keybinds:
                     Key([], "n", lazy.group["󱇚"].dropdown_toggle("notes")),
                     Key([], "b", lazy.group["󱇚"].dropdown_toggle("bluetooth")),
                     Key([], "v", lazy.group["󱇚"].dropdown_toggle("audio_mixer")),
-                    Key([], "t", lazy.group["󱇚"].dropdown_toggle("calendar")),
                     Key(["shift"], "e", lazy.spawn(apps["emoji_keyboard"])),
                 ],
                 name="APP LAUNCH MODE",
@@ -332,23 +310,21 @@ class Keybinds:
             Key(
                 [MOD],
                 "period",
-                lazy.screen.next_group(skip_empty=True),
+                lazy.screen.next_group(skip_empty=True, skip_managed=True),
                 desc="Go to the next group",
             ),
             Key(
                 [MOD],
                 "comma",
-                lazy.screen.prev_group(skip_empty=True),
+                lazy.screen.prev_group(skip_empty=True, skip_managed=True),
                 desc="Go to the previous group",
             ),
         ]
         for grp in group_keys:
             group_keybinds.extend(
                 [
-                    Key([MOD], group_keys[grp],
-                        lazy.group[grp].toscreen(toggle=True)),
-                    Key([MOD, "shift"], group_keys[grp],
-                        lazy.window.togroup(grp)),
+                    Key([MOD], group_keys[grp], lazy.group[grp].toscreen(toggle=True)),
+                    Key([MOD, "shift"], group_keys[grp], lazy.window.togroup(grp)),
                 ]
             )
         return group_keybinds

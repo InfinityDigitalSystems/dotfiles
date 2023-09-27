@@ -10,11 +10,16 @@ COLORS = {
     "green": "#5B9E2E",
 }
 
+
 def infinity_dark(c):
-    c.prompt.radius = 0 # Rounding radius (in pixels) for the edges of prompts.
+    c.prompt.radius = 0  # Rounding radius (in pixels) for the edges of prompts.
 
     c.fonts.default_size = "10pt"
     c.fonts.default_family = "JetBrainsMono NFM"
+    c.fonts.web.family.standard = "JetBrainsMono NFM"
+    c.fonts.web.family.serif = "JetBrainsMono NFM"
+    c.fonts.web.family.sans_serif = "JetBrainsMono NFM"
+    c.fonts.web.family.fixed = "JetBrainsMono NFM"
 
     c.colors.hints.bg = COLORS["highlight"]
     c.hints.border = COLORS["text"]

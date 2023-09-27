@@ -25,6 +25,22 @@ on-cd
 # Make it so you can quit with :q
 cmd q quit
 
+# Searchable Bookmarks
+cmd bookmark_jump ${{
+    res="$(cat $HOME/.config/lf/bookmarks/$(ls $HOME/.config/lf/bookmarks/ | fzf --bind=tab:down,btab:up --reverse --header='Jump to bookmark'))"
+    lf -remote "send $id cd \"$res\""
+}}
+
+cmd bookmark_create ${{
+    # Check if the directory exists
+    if [ ! -d "$HOME/.config/lf/bookmarks" ]; then
+      # If it doesn't exist, create it
+      mkdir -p "$HOME/.config/lf/bookmarks/" 
+      echo "Created LF bookmark directory"
+    fi
+    echo $PWD > ~/.config/lf/bookmarks/$@
+}}
+
 # Custom commands
 cmd open &{{
 	mimetype=$(file --brief --dereference --mime-type $f)
@@ -153,6 +169,10 @@ map f :fzf_jump
 map O push :open-with-gui<space> ## input application
 map o push :open-with-cli<space> ## input application
 
+map bc push :bookmark_create<space> ## Create a bookmark
+map bb :bookmark_jump ## Jump to bookmark
+map bj :bookmark_jump ## Jump to bookmark
+
 map xg $lazygit
 
 map ad :push %mkdir<space>-p<space>
@@ -165,6 +185,7 @@ map g/ cd /
 map gh cd ~
 map gi cd ~/nextcloud/
 map gc cd ~/.config
+map gb cd ~/.config/lf/bookmarks/
 map gt cd ~/.local/share/Trash/files
 map gr cd ~/repos/
 map gm cd /run/media/

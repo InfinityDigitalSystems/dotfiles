@@ -1,9 +1,10 @@
-local m = {"numtostr/comment.nvim"}
+local m = {
+	"numtostr/comment.nvim",
+	cond = not vim.g.vscode,
+}
 
-m.init = function ()
-    require("Comment").setup()
+m.config = function()
+	require("Comment").setup()
 end
 
 return m
-
-

@@ -35,3 +35,7 @@
 ### NeoVim
 [link to repo](https://gitlab.com/captainblue01/dotfiles/-/tree/main/config/nvim) <br>
 ![neovim](https://i.imgur.com/Rd4OgU9.png) 
+
+
+
+me and josh ate too pizzas each

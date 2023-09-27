@@ -5,7 +5,6 @@ import os
 
 
 def generate_screens(bar_thickness, outside_margins, colors, font):
-
     try:
         screen_count = int(os.environ["SCREENS"])
     except KeyError:
@@ -33,29 +32,51 @@ class BarWidgets:
             # "font": "JetBrainsMono Nerd Font Mono Light",
             "highlight_method": "block",
             "this_current_screen_border": colors["blue"],
-            "this_screen_border": colors["white"],
+            "this_screen_border": colors["magenta"],
             "other_current_screen_border": colors["grey"],
             "other_screen_border": colors["grey"],
             "active": colors["white"],
             "block_highlight_text_color": colors["darker"],
+            "disable_drag": False,
             "use_mouse_wheel": False,
             "inactive": colors["grey"],
             "rounded": False,
             "background": colors["darkgrey"],
             "margin_x": 0,
-
         }
         self.left_widgets = [
             # widget.WindowTabs(),
             # widget.WindowName(),
             widget.CurrentScreen(
-                active_text="█", active_color=colors["green"], inactive_text="█", inactive_color=colors["red"], fontsize=18, padding=0, margin=0),
-            widget.TaskList(icon_size=17, max_title_width=400, highlight_method="block", borderwidth=0,
-                            margin=0, padding_x=8, padding_y=3, rounded=False, border=colors["darkgrey"]),
+                active_text="█",
+                active_color=colors["blue"],
+                inactive_text="█",
+                inactive_color=colors["magenta"],
+                fontsize=18,
+                padding=0,
+                margin=0,
+            ),
+            widget.TaskList(
+                icon_size=17,
+                max_title_width=400,
+                highlight_method="block",
+                borderwidth=0,
+                margin=0,
+                padding_x=8,
+                padding_y=3,
+                rounded=False,
+                border=colors["darkgrey"],
+            ),
             widget.Prompt(
-                foreground=colors["darker"], cursor_color=colors["darker"], background=colors["green"], margin=8,),
-            widget.Chord(foreground=colors["darker"],
-                         background=colors["magenta"],),
+                foreground=colors["darker"],
+                cursor_color=colors["darker"],
+                background=colors["green"],
+                margin=8,
+            ),
+            widget.Chord(
+                foreground=colors["darker"],
+                background=colors["magenta"],
+            ),
         ]
         self.center_widgets = [
             # widget.Spacer(bar.STRETCH),
@@ -63,28 +84,62 @@ class BarWidgets:
             # widget.GroupBox(hide_unused = True, visible_groups=["4","5","6","7","8","9","0"],  **self.group_box_settings),
             # widget.GroupBox(visible_groups=["Q","W","E"],  **self.group_box_settings),
             widget.GroupBox(hide_unused=True, **self.group_box_settings),
-            widget.Sep(foreground=colors["grey"], linewidth=2,
-                       size_percent=40, padding=4, background=colors["darkgrey"]),
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
         ]
         self.systray = [
             widget.Systray(icon_size=12, padding=8,
                            background=colors["darkgrey"]),
             widget.Spacer(8, background=colors["darkgrey"]),
-            widget.Sep(foreground=colors["grey"], linewidth=2,
-                       size_percent=40, padding=4, background=colors["darkgrey"]),
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
         ]
         self.right_widgets = [
             widget.Spacer(5, background=colors["darkgrey"]),
-            widget.Clock(format="󰃮 %a, %B %d", mouse_callbacks={
-                         "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")}, background=colors["darkgrey"]),
-            widget.Sep(foreground=colors["grey"], linewidth=2,
-                       size_percent=40, padding=4, background=colors["darkgrey"]),
-            widget.Clock(format="%I:%M%p", mouse_callbacks={
-                         "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")}, background=colors["darkgrey"]),
-            widget.Sep(foreground=colors["grey"], linewidth=2,
-                       size_percent=40, padding=4, background=colors["darkgrey"]),
+            widget.Clock(
+                format="󰃮 %a, %B %d",
+                mouse_callbacks={
+                    "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
+                },
+                background=colors["darkgrey"],
+            ),
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
+            widget.Clock(
+                format="%I:%M%p",
+                mouse_callbacks={
+                    "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
+                },
+                background=colors["darkgrey"],
+            ),
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
             widget.CurrentLayoutIcon(
-                scale=0.5, foreground=colors["white"], padding=0, background=colors["darkgrey"]),
+                scale=0.5,
+                foreground=colors["white"],
+                padding=0,
+                background=colors["darkgrey"],
+            ),
             widget.Spacer(5, background=colors["darkgrey"]),
         ]
 
@@ -156,15 +211,15 @@ class WidgetsAndScreen(BarWidgets):
                 + self.right_widgets
             )
         else:
-            bar_widgets = (
-                self.left_widgets
-                + self.center_widgets
-                + self.right_widgets
-            )
+            bar_widgets = self.left_widgets + self.center_widgets + self.right_widgets
 
         self.screen = Screen(
-            top=bar.Bar(bar_widgets, bar_thickness,
-                        margin=[0, 0, outside_margins, 0]),
+            top=bar.Bar(
+                bar_widgets,
+                bar_thickness,
+                # background="#00000000",
+                margin=[0, 0, outside_margins, 0],
+            ),
             bottom=bar.Gap(outside_margins),
             left=bar.Gap(outside_margins),
             right=bar.Gap(outside_margins),
