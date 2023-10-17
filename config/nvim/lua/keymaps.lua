@@ -32,12 +32,20 @@ keymap("i", "<C-BS>", "<C-W>", { noremap = true, silent = true })
 keymap("n", "<C-Backspace>", "daw", { noremap = true, silent = true })
 
 -- Resize windows using alt + shift + [hjkl]
+keymap("n", "<AS-up>", ":resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<AS-down>", ":resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<AS-left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<AS-right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 keymap("n", "<AS-k>", ":resize +2<CR>", { noremap = true, silent = true })
 keymap("n", "<AS-j>", ":resize -2<CR>", { noremap = true, silent = true })
 keymap("n", "<AS-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
 keymap("n", "<AS-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- Shift focus between windows using alt + [hjkl]
+keymap("n", "<A-left>", "<C-w>h", { noremap = true, silent = true })
+keymap("n", "<A-down>", "<C-w>j", { noremap = true, silent = true })
+keymap("n", "<A-up>", "<C-w>k", { noremap = true, silent = true })
+keymap("n", "<A-right>", "<C-w>l", { noremap = true, silent = true })
 keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
 keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
@@ -53,9 +61,13 @@ keymap("v", "<", "<gv", { noremap = true, silent = true })
 keymap("v", ">", ">gv", { noremap = true, silent = true })
 keymap("v", "<A-,>", "<gv", { noremap = true, silent = true })
 keymap("v", "<A-.>", ">gv", { noremap = true, silent = true })
+keymap("v", "<A-left>", "<gv", { noremap = true, silent = true })
+keymap("v", "<A-right>", ">gv", { noremap = true, silent = true })
 keymap("v", "<A-h>", "<gv", { noremap = true, silent = true })
 keymap("v", "<A-l>", ">gv", { noremap = true, silent = true })
 -- Move text up and down
+keymap("v", "<A-down>", ":m >+1<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<A-up>", ":m <-2<CR>gv=gv", { noremap = true, silent = true })
 keymap("v", "<A-j>", ":m >+1<CR>gv=gv", { noremap = true, silent = true })
 keymap("v", "<A-k>", ":m <-2<CR>gv=gv", { noremap = true, silent = true })
 keymap("v", "p", '"_dP', { noremap = true, silent = true })
@@ -150,6 +162,8 @@ keymap("n", "<A-9>", "<cmd>:BufferLineGoToBuffer 9<cr>", { noremap = true, silen
 -- Alternate tab switching keys
 keymap("n", "<AS-o>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
 keymap("n", "<AS-p>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap("n", "<C-TAB>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap("n", "<CS-TAB>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
 -- Close buffer
 keymap("n", "<AS-c>", ":Bdelete<CR>", { noremap = true, silent = true, desc = "Kill Buffer" })
 -- Switch between buffers

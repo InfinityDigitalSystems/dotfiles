@@ -133,6 +133,42 @@ class Keybinds:
         self.focus_switching_keybinds = [
             Key(
                 [MOD],
+                "up",
+                lazy.function(plugins.traverse_up),
+                desc="Shifts Focus up (will shift screens if at end of current screen)",
+            ),
+            Key(
+                [MOD],
+                "down",
+                lazy.function(plugins.traverse_down),
+                desc="Shifts Focus down (will shift screens if at end of current screen)",
+            ),
+            Key(
+                [MOD],
+                "left",
+                lazy.function(plugins.traverse_left),
+                desc="Shifts Focus left (will shift screens if at end of current screen)",
+            ),
+            Key(
+                [MOD],
+                "right",
+                lazy.function(plugins.traverse_right),
+                desc="Shifts Focus right (will shift screens if at end of current screen)",
+            ),
+            Key(
+                [MOD, "shift"],
+                "left",
+                lazy.function(focus_screen, "left"),
+                desc="Switches to next Screen",
+            ),
+            Key(
+                [MOD, "shift"],
+                "right",
+                lazy.function(focus_screen, "right"),
+                desc="Switches to previous Screen",
+            ),
+            Key(
+                [MOD],
                 "k",
                 lazy.function(plugins.traverse_up),
                 desc="Shifts Focus up (will shift screens if at end of current screen)",
@@ -156,30 +192,6 @@ class Keybinds:
                 desc="Shifts Focus right (will shift screens if at end of current screen)",
             ),
             Key(
-                [MOD],
-                "p",
-                lazy.layout.previous(),
-                desc="Move window focus to other window",
-            ),
-            Key(
-                [MOD],
-                "o",
-                lazy.layout.next(),
-                desc="Move window focus to other window",
-            ),
-            Key(
-                [MOD],
-                "space",
-                lazy.layout.previous(),
-                desc="Move window focus to other window",
-            ),
-            Key(
-                [MOD, "shift"],
-                "space",
-                lazy.layout.next(),
-                desc="Move window focus to other window",
-            ),
-            Key(
                 [MOD, "shift"],
                 "h",
                 lazy.function(focus_screen, "left"),
@@ -191,10 +203,71 @@ class Keybinds:
                 lazy.function(focus_screen, "right"),
                 desc="Switches to previous Screen",
             ),
+            Key(
+                [MOD],
+                "space",
+                lazy.layout.previous(),
+                desc="Move window focus to other window",
+            ),
+            Key(
+                [MOD, "shift"],
+                "space",
+                lazy.layout.next(),
+                desc="Move window focus to other window",
+            ),
         ]
 
         self.window_manipulation = [
             # Resize Keys
+            Key(
+                ["shift"],
+                "left",
+                lazy.function(plugins.resize, "left"),
+                desc="Grow window to the left",
+            ),
+            Key(
+                ["shift"],
+                "right",
+                lazy.function(plugins.resize, "right"),
+                desc="Grow window to the right",
+            ),
+            Key(
+                ["shift"],
+                "down",
+                lazy.function(plugins.resize, "down"),
+                desc="Grow window down",
+            ),
+            Key(
+                ["shift"],
+                "up",
+                lazy.function(plugins.resize, "up"),
+                desc="Grow window up",
+            ),
+            # Rearrange Windows
+            Key(
+                ["mod1"],
+                "left",
+                lazy.function(plugins.move, "left"),
+                desc="Move window to the left",
+            ),
+            Key(
+                ["mod1"],
+                "right",
+                lazy.function(plugins.move, "right"),
+                desc="Move window to the right",
+            ),
+            Key(
+                ["mod1"],
+                "down",
+                lazy.function(plugins.move, "down"),
+                desc="Move window down",
+            ),
+            Key(
+                ["mod1"],
+                "up",
+                lazy.function(plugins.move, "up"),
+                desc="Move window up",
+            ),
             Key(
                 ["shift"],
                 "h",
