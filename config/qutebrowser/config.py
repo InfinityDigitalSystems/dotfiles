@@ -65,7 +65,7 @@ c.downloads.location.remember = True
 c.downloads.position = "bottom"
 
 # Hints
-c.hints.chars = "asdfghjkl"  # Characters used for hint strings.
+c.hints.chars = "arstneio"  # Characters used for hint strings.
 
 # Start Page
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank` for a blank page.

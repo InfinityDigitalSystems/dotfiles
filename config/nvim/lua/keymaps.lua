@@ -32,24 +32,24 @@ keymap("i", "<C-BS>", "<C-W>", { noremap = true, silent = true })
 keymap("n", "<C-Backspace>", "daw", { noremap = true, silent = true })
 
 -- Resize windows using alt + shift + [hjkl]
-keymap("n", "<AS-up>", ":resize +2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-down>", ":resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-k>", ":resize +2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-j>", ":resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<AS-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-up>", ":resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-down>", ":resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-k>", ":resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-j>", ":resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<CS-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- Shift focus between windows using alt + [hjkl]
-keymap("n", "<A-left>", "<C-w>h", { noremap = true, silent = true })
-keymap("n", "<A-down>", "<C-w>j", { noremap = true, silent = true })
-keymap("n", "<A-up>", "<C-w>k", { noremap = true, silent = true })
-keymap("n", "<A-right>", "<C-w>l", { noremap = true, silent = true })
-keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
-keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
-keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+keymap("n", "<C-left>", "<C-w>h", { noremap = true, silent = true })
+keymap("n", "<C-down>", "<C-w>j", { noremap = true, silent = true })
+keymap("n", "<C-up>", "<C-w>k", { noremap = true, silent = true })
+keymap("n", "<C-right>", "<C-w>l", { noremap = true, silent = true })
+keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- Terminal --
 -- Close toggle term if escape pressed
@@ -59,23 +59,19 @@ keymap("t", "<esc>", [[<A-\><C-n>]], { silent = true })
 -- Stay in indent mode
 keymap("v", "<", "<gv", { noremap = true, silent = true })
 keymap("v", ">", ">gv", { noremap = true, silent = true })
-keymap("v", "<A-,>", "<gv", { noremap = true, silent = true })
-keymap("v", "<A-.>", ">gv", { noremap = true, silent = true })
-keymap("v", "<A-left>", "<gv", { noremap = true, silent = true })
-keymap("v", "<A-right>", ">gv", { noremap = true, silent = true })
-keymap("v", "<A-h>", "<gv", { noremap = true, silent = true })
-keymap("v", "<A-l>", ">gv", { noremap = true, silent = true })
--- Move text up and down
-keymap("v", "<A-down>", ":m >+1<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<A-up>", ":m <-2<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<A-j>", ":m >+1<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<A-k>", ":m <-2<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "p", '"_dP', { noremap = true, silent = true })
+keymap("v", "<C-,>", "<gv", { noremap = true, silent = true })
+keymap("v", "<C-.>", ">gv", { noremap = true, silent = true })
+keymap("v", "<C-left>", "<gv", { noremap = true, silent = true })
+keymap("v", "<C-right>", ">gv", { noremap = true, silent = true })
+keymap("v", "<C-h>", "<gv", { noremap = true, silent = true })
+keymap("v", "<C-l>", ">gv", { noremap = true, silent = true })
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
+keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
+keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
+keymap("x", "<C-down>", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
+keymap("x", "<C-up>", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
 
 -- Splits
 table.insert(group_names, { s = { name = "Splits" } })
@@ -86,159 +82,100 @@ keymap("n", "<leader>sk", "<C-w>c", { noremap = true, silent = true, desc = "Win
 -- Buffers
 -- Cylce through Buffers
 table.insert(group_names, { b = { name = "Buffers" } })
-keymap("n", "<A-o>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap("n", "<C-o>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
 keymap("n", "<leader>bp", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
-keymap("n", "<A-p>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap("n", "<C-p>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
 keymap("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap("n", "<CS-TAB>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap("n", "<C-TAB>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
+keymap("n", "<C-PageUp>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+keymap("n", "<C-PageDown>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
 -- Close buffer
 keymap("n", "<leader>bk", ":Bdelete<CR>", { noremap = true, silent = true, desc = "Kill Buffer" })
-keymap("n", "<A-c>", ":Bdelete<CR>", { noremap = true, silent = true, desc = "Kill Buffer" })
+keymap("n", "<C-w>", ":Bdelete<CR>", { noremap = true, silent = true, desc = "Kill Buffer" })
 -- Switch between buffers
 keymap("n", "<leader>bs", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, desc = "Search Buffers" })
-keymap("n", "<A-TAB>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, desc = "Search Buffers" })
+keymap("n", "<C-TAB>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, desc = "Search Buffers" })
 keymap(
-  "n",
-  "<leader>b1",
-  "<cmd>:BufferLineGoToBuffer 1<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 1" }
+	"n",
+	"<leader>b1",
+	"<cmd>:BufferLineGoToBuffer 1<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 1" }
 )
-keymap("n", "<A-1>", "<cmd>:BufferLineGoToBuffer 1<cr>", { noremap = true, silent = true, desc = "Navigate to file 1" })
+keymap("n", "<C-1>", "<cmd>:BufferLineGoToBuffer 1<cr>", { noremap = true, silent = true, desc = "Navigate to file 1" })
 keymap(
-  "n",
-  "<leader>b2",
-  "<cmd>:BufferLineGoToBuffer 2<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 2" }
+	"n",
+	"<leader>b2",
+	"<cmd>:BufferLineGoToBuffer 2<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 2" }
 )
-keymap("n", "<A-2>", "<cmd>:BufferLineGoToBuffer 2<cr>", { noremap = true, silent = true, desc = "Navigate to file 2" })
+keymap("n", "<C-2>", "<cmd>:BufferLineGoToBuffer 2<cr>", { noremap = true, silent = true, desc = "Navigate to file 2" })
 keymap(
-  "n",
-  "<leader>b3",
-  "<cmd>:BufferLineGoToBuffer 3<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 3" }
+	"n",
+	"<leader>b3",
+	"<cmd>:BufferLineGoToBuffer 3<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 3" }
 )
-keymap("n", "<A-3>", "<cmd>:BufferLineGoToBuffer 3<cr>", { noremap = true, silent = true, desc = "Navigate to file 3" })
+keymap("n", "<C-3>", "<cmd>:BufferLineGoToBuffer 3<cr>", { noremap = true, silent = true, desc = "Navigate to file 3" })
 keymap(
-  "n",
-  "<leader>b4",
-  "<cmd>:BufferLineGoToBuffer 4<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 4" }
+	"n",
+	"<leader>b4",
+	"<cmd>:BufferLineGoToBuffer 4<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 4" }
 )
-keymap("n", "<A-4>", "<cmd>:BufferLineGoToBuffer 4<cr>", { noremap = true, silent = true, desc = "Navigate to file 4" })
+keymap("n", "<C-4>", "<cmd>:BufferLineGoToBuffer 4<cr>", { noremap = true, silent = true, desc = "Navigate to file 4" })
 keymap(
-  "n",
-  "<leader>b5",
-  "<cmd>:BufferLineGoToBuffer 5<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 5" }
+	"n",
+	"<leader>b5",
+	"<cmd>:BufferLineGoToBuffer 5<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 5" }
 )
-keymap("n", "<A-5>", "<cmd>:BufferLineGoToBuffer 5<cr>", { noremap = true, silent = true, desc = "Navigate to file 5" })
+keymap("n", "<C-5>", "<cmd>:BufferLineGoToBuffer 5<cr>", { noremap = true, silent = true, desc = "Navigate to file 5" })
 keymap(
-  "n",
-  "<leader>b6",
-  "<cmd>:BufferLineGoToBuffer 6<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 6" }
+	"n",
+	"<leader>b6",
+	"<cmd>:BufferLineGoToBuffer 6<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 6" }
 )
-keymap("n", "<A-6>", "<cmd>:BufferLineGoToBuffer 6<cr>", { noremap = true, silent = true, desc = "Navigate to file 6" })
+keymap("n", "<C-6>", "<cmd>:BufferLineGoToBuffer 6<cr>", { noremap = true, silent = true, desc = "Navigate to file 6" })
 keymap(
-  "n",
-  "<leader>b7",
-  "<cmd>:BufferLineGoToBuffer 7<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 7" }
+	"n",
+	"<leader>b7",
+	"<cmd>:BufferLineGoToBuffer 7<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 7" }
 )
-keymap("n", "<A-7>", "<cmd>:BufferLineGoToBuffer 7<cr>", { noremap = true, silent = true, desc = "Navigate to file 7" })
+keymap("n", "<C-7>", "<cmd>:BufferLineGoToBuffer 7<cr>", { noremap = true, silent = true, desc = "Navigate to file 7" })
 keymap(
-  "n",
-  "<leader>b8",
-  "<cmd>:BufferLineGoToBuffer 8<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 8" }
+	"n",
+	"<leader>b8",
+	"<cmd>:BufferLineGoToBuffer 8<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 8" }
 )
-keymap("n", "<A-8>", "<cmd>:BufferLineGoToBuffer 8<cr>", { noremap = true, silent = true, desc = "Navigate to file 8" })
+keymap("n", "<C-8>", "<cmd>:BufferLineGoToBuffer 8<cr>", { noremap = true, silent = true, desc = "Navigate to file 8" })
 keymap(
-  "n",
-  "<leader>b9",
-  "<cmd>:BufferLineGoToBuffer 9<cr>",
-  { noremap = true, silent = true, desc = "Navigate to file 9" }
+	"n",
+	"<leader>b9",
+	"<cmd>:BufferLineGoToBuffer 9<cr>",
+	{ noremap = true, silent = true, desc = "Navigate to file 9" }
 )
-keymap("n", "<A-9>", "<cmd>:BufferLineGoToBuffer 9<cr>", { noremap = true, silent = true, desc = "Navigate to file 9" })
--- Alternate tab switching keys
-keymap("n", "<AS-o>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
-keymap("n", "<AS-p>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
-keymap("n", "<C-TAB>", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
-keymap("n", "<CS-TAB>", ":bnext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
--- Close buffer
-keymap("n", "<AS-c>", ":Bdelete<CR>", { noremap = true, silent = true, desc = "Kill Buffer" })
--- Switch between buffers
-keymap("n", "<AS-TAB>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, desc = "Search Buffers" })
-keymap(
-  "n",
-  "<A-!>",
-  "<cmd>:BufferLineGoToBuffer 1<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 1" }
-)
-keymap(
-  "n",
-  "<A-@>",
-  "<cmd>:BufferLineGoToBuffer 2<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 2" }
-)
-keymap(
-  "n",
-  "<A-#>",
-  "<cmd>:BufferLineGoToBuffer 3<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 3" }
-)
-keymap(
-  "n",
-  "<A-$>",
-  "<cmd>:BufferLineGoToBuffer 4<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 4" }
-)
-keymap(
-  "n",
-  "<A-%>",
-  "<cmd>:BufferLineGoToBuffer 5<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 5" }
-)
-keymap(
-  "n",
-  "<A-^>",
-  "<cmd>:BufferLineGoToBuffer 6<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 6" }
-)
-keymap(
-  "n",
-  "<A-&>",
-  "<cmd>:BufferLineGoToBuffer 7<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 7" }
-)
-keymap(
-  "n",
-  "<A-*>",
-  "<cmd>:BufferLineGoToBuffer 8<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 8" }
-)
-keymap(
-  "n",
-  "<A-(>",
-  "<cmd>:BufferLineGoToBuffer 9<cr>",
-  { noremap = false, silent = true, desc = "Navigate to file 9" }
-)
+keymap("n", "<C-9>", "<cmd>:BufferLineGoToBuffer 9<cr>", { noremap = true, silent = true, desc = "Navigate to file 9" })
 
 -- Opens tree explorer
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
 keymap(
-  "n",
-  "<leader>E",
-  "<cmd>lua require('lf').start()<cr>",
-  { noremap = true, silent = true, desc = "Open File Manager" }
+	"n",
+	"<leader>E",
+	"<cmd>lua require('lf').start()<cr>",
+	{ noremap = true, silent = true, desc = "Open File Manager" }
 )
 
 --excute
 table.insert(group_names, { x = { name = "Execute software" } })
 keymap(
-  "n",
-  "<leader>xe",
-  "<cmd>lua require('lf').start()<cr>",
-  { noremap = true, silent = true, desc = "Open File Manager" }
+	"n",
+	"<leader>xe",
+	"<cmd>lua require('lf').start()<cr>",
+	{ noremap = true, silent = true, desc = "Open File Manager" }
 )
 keymap("n", "<leader>xg", "<cmd>lua _LAZYGIT_TOGGLE_TERM()<CR>", { noremap = true, silent = true, desc = "LazyGit" })
 
@@ -266,119 +203,119 @@ keymap("n", "<leader>wS", ":SudaWrite<CR>", { noremap = true, silent = true, des
 -- Find
 table.insert(group_names, { f = { name = "Find" } })
 keymap(
-  "n",
-  "<leader>ff",
-  "<cmd>Telescope find_files hidden=true<cr>",
-  { noremap = true, silent = true, desc = "Find File" }
+	"n",
+	"<leader>ff",
+	"<cmd>Telescope find_files hidden=true<cr>",
+	{ noremap = true, silent = true, desc = "Find File" }
 )
 keymap("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true, desc = "Live Grep" })
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true, desc = "Find Help" })
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true, desc = "Open Recent" })
 keymap("n", "<leader>fp", "<cmd>Telescope projects<cr>", { noremap = true, silent = true, desc = "Find Project" })
 keymap(
-  "n",
-  "<leader>f/",
-  "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-  { noremap = true, silent = true, desc = "Find in current Buffer" }
+	"n",
+	"<leader>f/",
+	"<cmd>Telescope current_buffer_fuzzy_find<cr>",
+	{ noremap = true, silent = true, desc = "Find in current Buffer" }
 )
 
 -- LSP
 table.insert(group_names, { l = { name = "LSP" } })
 local function lsp_keymaps(bufnr)
-  local buf_keymap = vim.api.nvim_buf_set_keymap
-  buf_keymap(
-    bufnr,
-    "n",
-    "gD",
-    "<cmd>lua vim.lsp.buf.declaration()<CR>",
-    { noremap = true, silent = true, desc = "Get Declaration" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "gd",
-    "<cmd>lua vim.lsp.buf.definition()<CR>",
-    { noremap = true, silent = true, desc = "Get Definintion" }
-  )
-  buf_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true, desc = "Hover" })
-  buf_keymap(
-    bufnr,
-    "n",
-    "gI",
-    "<cmd>lua vim.lsp.buf.implementation()<CR>",
-    { noremap = true, silent = true, desc = "Get Implementation" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "gr",
-    "<cmd>lua vim.lsp.buf.references()<CR>",
-    { noremap = true, silent = true, desc = "Get References" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "gl",
-    "<cmd>lua vim.diagnostic.open_float()<CR>",
-    { noremap = true, silent = true, desc = "Open Float" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lf",
-    "<cmd>lua vim.lsp.buf.format{ async = true }<cr>",
-    { noremap = true, silent = true, desc = "Format Buffer" }
-  )
-  buf_keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", { noremap = true, silent = true, desc = "LSP Info" })
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lI",
-    "<cmd>Mason<cr>",
-    { noremap = true, silent = true, desc = "Lsp Installer (Mason)" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>la",
-    "<cmd>lua vim.lsp.buf.code_action()<cr>",
-    { noremap = true, silent = true, desc = "Code Action" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lj",
-    "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>",
-    { noremap = true, silent = true, desc = "Next Diagnostic" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lk",
-    "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
-    { noremap = true, silent = true, desc = "Previous Diagnostic" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lr",
-    "<cmd>lua vim.lsp.buf.rename()<cr>",
-    { noremap = true, silent = true, desc = "Rename" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>ls",
-    "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-    { noremap = true, silent = true, desc = "Signature Help" }
-  )
-  buf_keymap(
-    bufnr,
-    "n",
-    "<leader>lq",
-    "<cmd>lua vim.diagnostic.setloclist()<CR>",
-    { noremap = true, silent = true, desc = "Diagnostic List" }
-  )
+	local buf_keymap = vim.api.nvim_buf_set_keymap
+	buf_keymap(
+		bufnr,
+		"n",
+		"gD",
+		"<cmd>lua vim.lsp.buf.declaration()<CR>",
+		{ noremap = true, silent = true, desc = "Get Declaration" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"gd",
+		"<cmd>lua vim.lsp.buf.definition()<CR>",
+		{ noremap = true, silent = true, desc = "Get Definintion" }
+	)
+	buf_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true, desc = "Hover" })
+	buf_keymap(
+		bufnr,
+		"n",
+		"gI",
+		"<cmd>lua vim.lsp.buf.implementation()<CR>",
+		{ noremap = true, silent = true, desc = "Get Implementation" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"gr",
+		"<cmd>lua vim.lsp.buf.references()<CR>",
+		{ noremap = true, silent = true, desc = "Get References" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"gl",
+		"<cmd>lua vim.diagnostic.open_float()<CR>",
+		{ noremap = true, silent = true, desc = "Open Float" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lf",
+		"<cmd>lua vim.lsp.buf.format{ async = true }<cr>",
+		{ noremap = true, silent = true, desc = "Format Buffer" }
+	)
+	buf_keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", { noremap = true, silent = true, desc = "LSP Info" })
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lI",
+		"<cmd>Mason<cr>",
+		{ noremap = true, silent = true, desc = "Lsp Installer (Mason)" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>la",
+		"<cmd>lua vim.lsp.buf.code_action()<cr>",
+		{ noremap = true, silent = true, desc = "Code Action" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lj",
+		"<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>",
+		{ noremap = true, silent = true, desc = "Next Diagnostic" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lk",
+		"<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+		{ noremap = true, silent = true, desc = "Previous Diagnostic" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lr",
+		"<cmd>lua vim.lsp.buf.rename()<cr>",
+		{ noremap = true, silent = true, desc = "Rename" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>ls",
+		"<cmd>lua vim.lsp.buf.signature_help()<CR>",
+		{ noremap = true, silent = true, desc = "Signature Help" }
+	)
+	buf_keymap(
+		bufnr,
+		"n",
+		"<leader>lq",
+		"<cmd>lua vim.diagnostic.setloclist()<CR>",
+		{ noremap = true, silent = true, desc = "Diagnostic List" }
+	)
 end
 
 -- Doc string

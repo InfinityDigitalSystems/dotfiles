@@ -56,15 +56,15 @@ class Keybinds:
                 desc="Brings all floating windows to the top",
             ),
             # Kill window
-            Key([MOD, "mod1"], "c", lazy.window.kill(), desc="Kill focused window"),
+            Key([MOD, "control"], "c", lazy.window.kill(), desc="Kill focused window"),
             # QTILE options
             Key(
-                [MOD, "mod1"],
+                [MOD, "control"],
                 "r",
                 lazy.function(plugins.refresh_system),
                 desc="Restart Qtile",
             ),
-            Key([MOD, "mod1"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+            Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
             Key(
                 [MOD],
                 "m",
@@ -294,25 +294,25 @@ class Keybinds:
             ),
             # Rearrange Windows
             Key(
-                ["mod1"],
+                ["control"],
                 "h",
                 lazy.function(plugins.move, "left"),
                 desc="Move window to the left",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "l",
                 lazy.function(plugins.move, "right"),
                 desc="Move window to the right",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "j",
                 lazy.function(plugins.move, "down"),
                 desc="Move window down",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "k",
                 lazy.function(plugins.move, "up"),
                 desc="Move window up",
