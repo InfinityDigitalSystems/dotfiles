@@ -245,25 +245,25 @@ class Keybinds:
             ),
             # Rearrange Windows
             Key(
-                ["mod1"],
+                ["control"],
                 "left",
                 lazy.function(plugins.move, "left"),
                 desc="Move window to the left",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "right",
                 lazy.function(plugins.move, "right"),
                 desc="Move window to the right",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "down",
                 lazy.function(plugins.move, "down"),
                 desc="Move window down",
             ),
             Key(
-                ["mod1"],
+                ["control"],
                 "up",
                 lazy.function(plugins.move, "up"),
                 desc="Move window up",
