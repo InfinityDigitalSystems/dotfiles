@@ -84,7 +84,7 @@ rust
 sshfs
 strace
 thunar
-thunar
+thunderbird
 trash-cli
 ttf-dejavu 
 ttf-jetbrains-mono-nerd 
@@ -104,7 +104,6 @@ zip
 
 # List of AUR packages
 aur_packages=(
-betterbird-bin
 mcomix 
 xapp-epub-thumbnailer
 wkhtmltopdf-static
