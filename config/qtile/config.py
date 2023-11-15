@@ -10,22 +10,22 @@ import layouts_and_groups
 search_script = os.path.expanduser("~/.config/qtile/scripts/find_file")
 file_man = os.path.expanduser("~/.config/lf/lfrun")
 apps = {
-    "web_browser": "qutebrowser",
-    "terminal": "kitty",
+    "web_browser": "brave",
+    "terminal": "alacritty",
     # Launches in a dropdown
-    "file_manager": f"kitty -T File\ Manager -e {file_man}",
+    "file_manager": f"alacritty -T File\ Manager -e {file_man}",
     "calculator": "qalculate-gtk",  # launches in a dropdown
-    "email": "betterbird",
+    "email": "thunderbird",
     "screenshot_software": "flameshot gui",
     "emoji_keyboard": "rofi -monitor -1 -show emoji -theme infinity-icon",
     "application_launcher": "rofi -show drun -monitor -1 -theme infinity-list",
     "task_switcher": "rofi -show window -monitor -1 -theme infinity-icon",
     "clipboard": "clipmenu",
-    "find_file": f"kitty -T File\ Finder -e {search_script}",
+    "find_file": f"alacritty -T File\ Finder -e {search_script}",
     "music_player": "spotify",  # Launches in a dropdown
     "password_manager": "bitwarden-desktop",  # Launches in a dropdown
-    "editor": "kitty -e nvim",
-    "notes": "kitty -T Notes --working-directory notes -e nvim",
+    "editor": "alacritty -e nvim",
+    "notes": "alacritty -T Notes --working-directory notes -e nvim",
 }
 
 colors = {
