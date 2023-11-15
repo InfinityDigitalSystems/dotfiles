@@ -6,7 +6,7 @@ set scrolloff 8
 set ifs "\n"
 
 # Draws borders
-# set drawbox
+set drawbox
 
 # Use enter for shell commands
 set ifs "\n"
