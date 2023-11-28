@@ -73,7 +73,7 @@ class Groups:
             "on_focus_lost_hide": True,
             "warp_pointer": True,
             "height": 0.7,
-            "opacity": 0.85,
+            "opacity": 0.95,
             "width": 0.65,
             "x": 0.175,
             "y": 0.15,
@@ -83,12 +83,12 @@ class Groups:
             # System dropdowns
             DropDown(
                 "bluetooth",
-                "kitty -T Bluetooth -e bluetuith",
+                "kitty -T Bluetooth -e blueberry",
                 **default_dropdown_settings,
             ),
             DropDown(
                 "audio_mixer",
-                "kitty -T Mixer -e pulsemixer",
+                "kitty -T Mixer -e pavucontrol",
                 **default_dropdown_settings,
             ),
             DropDown(
@@ -119,7 +119,8 @@ class Groups:
                 x=0.35,
                 y=0.0,
             ),
-            DropDown("music_player", apps["music_player"], **default_dropdown_settings),
+            DropDown("music_player",
+                     apps["music_player"], **default_dropdown_settings),
             DropDown(
                 "notes",
                 apps["notes"],
