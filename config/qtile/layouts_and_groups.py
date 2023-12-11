@@ -3,9 +3,10 @@ from libqtile.config import Group, ScratchPad, DropDown, Match
 
 
 class Layouts:
-    def __init__(self, colors, margins):
+    def __init__(self, colors, margins, font):
         self.colors = colors
         self.margins = margins
+        self.font = font
 
     def get_layouts(self):
         layouts = [
@@ -25,7 +26,14 @@ class Layouts:
                 border_normal=self.colors["darkgrey"],
                 border_focus=self.colors["blue"],
             ),
-            layout.Floating(),
+            # layout.TreeTab(
+            #     bg_color=self.colors["darker"],
+            #     fontsize=13,
+            #     active_bg=self.colors["blue"],
+            #     active_fg=self.colors["darker"],
+            #     inactive_bg=self.colors["darkgrey"],
+            #     margin_left=-self.margins,
+            # ),
         ]
         return layouts
 
@@ -88,7 +96,7 @@ class Groups:
             ),
             DropDown(
                 "audio_mixer",
-                "kitty -T Mixer -e pavucontrol",
+                "pavucontrol",
                 **default_dropdown_settings,
             ),
             DropDown(
@@ -119,8 +127,7 @@ class Groups:
                 x=0.35,
                 y=0.0,
             ),
-            DropDown("music_player",
-                     apps["music_player"], **default_dropdown_settings),
+            DropDown("music_player", apps["music_player"], **default_dropdown_settings),
             DropDown(
                 "notes",
                 apps["notes"],

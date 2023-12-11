@@ -65,7 +65,9 @@ class BarWidgets:
                 padding_x=8,
                 padding_y=3,
                 rounded=False,
+                spacing=5,
                 border=colors["darkgrey"],
+                unfocused_border=colors["dark"],
             ),
             widget.Prompt(
                 foreground=colors["darker"],
@@ -93,8 +95,9 @@ class BarWidgets:
             ),
         ]
         self.systray = [
-            widget.Systray(icon_size=12, padding=8,
-                           background=colors["darkgrey"]),
+            widget.StatusNotifier(
+                icon_size=12, padding=8, background=colors["darkgrey"]
+            ),
             widget.Spacer(8, background=colors["darkgrey"]),
             widget.Sep(
                 foreground=colors["grey"],

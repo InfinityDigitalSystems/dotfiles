@@ -1,11 +1,11 @@
 #!/bin/sh
 # xss-lock xsecurelock &
 light-locker &
-picom &
+# picom &
 # nm-applet --indicator &
 clipmenud &
 udiskie &
-feh --randomize --bg-fill ~/.config/desktopwallpapers/ &
+# feh --randomize --bg-fill ~/.config/desktopwallpapers/ &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
 unclutter &

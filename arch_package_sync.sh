@@ -112,14 +112,11 @@ onlyoffice-bin
 papirus-linux-universe 
 mpris2controller-git 
 unclutter-xfixes-git 
-bluetuith 
 ueberzugpp
 chromium-widevine 
 brave-bin 
 spotify
 cp-p-git
-calcure
-discord_arch_electron
 )
 
 # Install packages from the official repositories

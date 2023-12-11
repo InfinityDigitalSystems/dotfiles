@@ -49,7 +49,7 @@ widget_defaults = {
     "font": font,
     "fontsize": 12,
     "padding": 6,
-    "background": f'{colors["darker"]}e6',
+    "background": f'{colors["darker"]}',
     "foreground": colors["white"],
 }
 
@@ -72,7 +72,7 @@ screens = screens.generate_screens(bar_thickness, layout_margins, colors, font)
 # Layouts & Groups
 qtile_groups = layouts_and_groups.Groups()
 groups = qtile_groups.get_groups(apps)
-qtile_layouts = layouts_and_groups.Layouts(colors, layout_margins)
+qtile_layouts = layouts_and_groups.Layouts(colors, layout_margins, font)
 layouts = qtile_layouts.get_layouts()
 floating_layout = qtile_layouts.get_floating_layout()
 
