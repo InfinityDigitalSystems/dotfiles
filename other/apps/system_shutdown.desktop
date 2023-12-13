@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Shutdown System
+Comment=Shutdown System
+Icon=Infinity
+Exec="/home/brodie/.local/share/applications/infinityos/system_shutdown.sh"

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=System Sleep
+Comment=Put System to sleep
+Icon=Infinity
+Exec="/home/brodie/.local/share/applications/infinityos/system_sleep.sh"
