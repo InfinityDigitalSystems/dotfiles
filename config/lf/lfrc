@@ -183,7 +183,7 @@ map gd cd ~/Downloads
 map gn cd ~/notes
 map g/ cd /
 map gh cd ~
-map gi cd ~/nextcloud/
+map gi cd ~/Nextcloud/
 map gc cd ~/.config
 map gb cd ~/.config/lf/bookmarks/
 map gt cd ~/.local/share/Trash/files
