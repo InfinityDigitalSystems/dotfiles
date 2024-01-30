@@ -108,6 +108,39 @@ class BarWidgets:
             ),
         ]
         self.right_widgets = [
+
+            widget.Clock(
+                timezone="Europe/Amsterdam",
+                format="NL, %a %I:%M%p",
+                mouse_callbacks={
+                    "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
+                },
+                background=colors["darkgrey"],
+            ),
+
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
+
+            widget.Clock(
+                timezone="US/Central",
+                format="TX, %a %I:%M%p",
+                mouse_callbacks={
+                    "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
+                },
+                background=colors["darkgrey"],
+            ),
+            widget.Sep(
+                foreground=colors["grey"],
+                linewidth=2,
+                size_percent=40,
+                padding=4,
+                background=colors["darkgrey"],
+            ),
             widget.Spacer(5, background=colors["darkgrey"]),
             widget.Clock(
                 format="󰃮 %a, %B %d",
@@ -123,13 +156,16 @@ class BarWidgets:
                 padding=4,
                 background=colors["darkgrey"],
             ),
+
             widget.Clock(
+                timezone="Australia/Brisbane",
                 format="%I:%M%p",
                 mouse_callbacks={
                     "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
                 },
                 background=colors["darkgrey"],
             ),
+
             widget.Sep(
                 foreground=colors["grey"],
                 linewidth=2,
