@@ -110,8 +110,8 @@ class BarWidgets:
         self.right_widgets = [
 
             widget.Clock(
-                timezone="Europe/Amsterdam",
-                format="NL, %a %I:%M%p",
+                timezone="US/Central",
+                format="TX, %a %I:%M%p",
                 mouse_callbacks={
                     "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
                 },
@@ -127,8 +127,8 @@ class BarWidgets:
             ),
 
             widget.Clock(
-                timezone="US/Central",
-                format="TX, %a %I:%M%p",
+                timezone="Europe/Amsterdam",
+                format="NL, %a %I:%M%p",
                 mouse_callbacks={
                     "Button1": lazy.group["󱇚"].dropdown_toggle("calendar")
                 },
