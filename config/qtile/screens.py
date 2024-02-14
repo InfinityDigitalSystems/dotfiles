@@ -45,8 +45,6 @@ class BarWidgets:
             "margin_x": 0,
         }
         self.left_widgets = [
-            # widget.WindowTabs(),
-            # widget.WindowName(),
             widget.CurrentScreen(
                 active_text="█",
                 active_color=colors["blue"],
@@ -55,6 +53,11 @@ class BarWidgets:
                 fontsize=18,
                 padding=0,
                 margin=0,
+                mouse_callbacks={
+                    "Button1": lazy.spawn(
+                        "rofi -show drun -monitor -1 -theme infinity-list"
+                    )
+                },
             ),
             widget.TaskList(
                 icon_size=17,
@@ -108,7 +111,6 @@ class BarWidgets:
             ),
         ]
         self.right_widgets = [
-
             widget.Clock(
                 timezone="US/Central",
                 format="TX, %a %I:%M%p",
@@ -117,7 +119,6 @@ class BarWidgets:
                 },
                 background=colors["darkgrey"],
             ),
-
             widget.Sep(
                 foreground=colors["grey"],
                 linewidth=2,
@@ -125,7 +126,6 @@ class BarWidgets:
                 padding=4,
                 background=colors["darkgrey"],
             ),
-
             widget.Clock(
                 timezone="Europe/Amsterdam",
                 format="NL, %a %I:%M%p",
@@ -156,7 +156,6 @@ class BarWidgets:
                 padding=4,
                 background=colors["darkgrey"],
             ),
-
             widget.Clock(
                 timezone="Australia/Brisbane",
                 format="%I:%M%p",
@@ -165,7 +164,6 @@ class BarWidgets:
                 },
                 background=colors["darkgrey"],
             ),
-
             widget.Sep(
                 foreground=colors["grey"],
                 linewidth=2,
