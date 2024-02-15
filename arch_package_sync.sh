@@ -2,6 +2,7 @@
 
 # List of packages from the official repositories
 official_packages=(
+  file-roller
 tree
 chromium
 alacritty 
