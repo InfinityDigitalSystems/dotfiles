@@ -183,7 +183,6 @@ keymap("n", "<leader>xg", "<cmd>lua _LAZYGIT_TOGGLE_TERM()<CR>", { noremap = tru
 table.insert(group_names, { r = { name = "Run Code" } })
 keymap("n", "<leader>rp", ":w<CR>:TermExec cmd='python %'<CR>", { noremap = true, silent = true, desc = "Run Python" })
 keymap("n", "<leader>rl", ":w<CR>:TermExec cmd='lua %'<CR>", { noremap = true, silent = true, desc = "Run Lua" })
-keymap("n", "<leader>rm", ":MarkdownPreview<CR>", { noremap = true, silent = true, desc = "Markdown Preview" })
 keymap("n", "<leader>rwq", '<cmd>!qutebrowser "%"<cr>', { desc = "Open file in qutebrowser" })
 keymap("n", "<leader>rwf", '<cmd>!firefox "%"<cr>', { desc = "Open file in firefox" })
 keymap("n", "<leader>rwb", '<cmd>!brave "%"<cr>', { desc = "Open file in brave" })
