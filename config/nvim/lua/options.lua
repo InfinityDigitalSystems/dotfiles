@@ -10,7 +10,7 @@ o.numberwidth = 1                         -- set number column width to 2 {defau
 -- General Settings
 o.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 o.title = true
-o.cmdheight = 1                           -- more space in the neovim command line for displaying messages
+o.cmdheight = 0                           -- more space in the neovim command line for displaying messages
 o.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 o.conceallevel = 0                        -- so that `` is visible in markdown files
 o.fileencoding = "utf-8"                  -- the encoding written to a file
@@ -42,6 +42,8 @@ o.title = true                            -- the font used in graphical neovim a
 o.titlestring = "NVIM - %<%F%="
 o.titlelen = 100
 o.spelllang = "en_au"
+-- o.laststatus = 0
+-- vim.cmd("set laststatus=0 ruler")
 -- o.spell = true
 
 -- Folding is handled by lua/plugins/folding
