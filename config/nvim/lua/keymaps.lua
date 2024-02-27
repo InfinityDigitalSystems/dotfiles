@@ -53,18 +53,18 @@ keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- Terminal --
 -- Close toggle term if escape pressed
-keymap("t", "<esc>", [[<A-\><C-n>]], { silent = true })
+-- keymap("t", "<esc>", [[<A-\><C-n>]], { silent = true })
 
 -- Move Blocks around --
 -- Stay in indent mode
 keymap("v", "<", "<gv", { noremap = true, silent = true })
 keymap("v", ">", ">gv", { noremap = true, silent = true })
-keymap("v", "<C-,>", "<gv", { noremap = true, silent = true })
-keymap("v", "<C-.>", ">gv", { noremap = true, silent = true })
-keymap("v", "<C-left>", "<gv", { noremap = true, silent = true })
-keymap("v", "<C-right>", ">gv", { noremap = true, silent = true })
-keymap("v", "<C-h>", "<gv", { noremap = true, silent = true })
-keymap("v", "<C-l>", ">gv", { noremap = true, silent = true })
+keymap("v", "<A-,>", "<gv", { noremap = true, silent = true })
+keymap("v", "<A-.>", ">gv", { noremap = true, silent = true })
+keymap("v", "<A-left>", "<gv", { noremap = true, silent = true })
+keymap("v", "<A-right>", ">gv", { noremap = true, silent = true })
+keymap("v", "<A-h>", "<gv", { noremap = true, silent = true })
+keymap("v", "<A-l>", ">gv", { noremap = true, silent = true })
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
 keymap("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
@@ -184,6 +184,7 @@ table.insert(group_names, { r = { name = "Run Code" } })
 keymap("n", "<leader>rp", ":w<CR>:TermExec cmd='python %'<CR>", { noremap = true, silent = true, desc = "Run Python" })
 keymap("n", "<leader>rl", ":w<CR>:TermExec cmd='lua %'<CR>", { noremap = true, silent = true, desc = "Run Lua" })
 keymap("n", "<leader>rwq", '<cmd>!qutebrowser "%"<cr>', { desc = "Open file in qutebrowser" })
+keymap("n", "<leader>rm", ":MarkdownPreview<CR>", { noremap = true, silent = true, desc = "Markdown Preview" })
 keymap("n", "<leader>rwf", '<cmd>!firefox "%"<cr>', { desc = "Open file in firefox" })
 keymap("n", "<leader>rwb", '<cmd>!brave "%"<cr>', { desc = "Open file in brave" })
 

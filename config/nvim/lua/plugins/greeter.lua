@@ -70,8 +70,7 @@ m.config = function()
 		-- handle:close()
 		-- return fortune
 		return {
-			[[   Brodie Henry 2023   ]],
-			[[infinitydigital.systems]],
+			[[   Brodie Henry 2024   ]],
 		}
 	end
 

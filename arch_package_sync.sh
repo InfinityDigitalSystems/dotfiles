@@ -2,7 +2,10 @@
 
 # List of packages from the official repositories
 official_packages=(
+  languagetool
   file-roller
+  tldr
+  tmux
 tree
 chromium
 alacritty 
@@ -101,6 +104,7 @@ xorg-xinit
 xsel 
 yt-dlp 
 zip 
+pdfjs
 )
 
 # List of AUR packages

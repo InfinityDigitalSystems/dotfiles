@@ -57,9 +57,12 @@ def keymaps(config):
     config.bind(
         "<Ctrl-e>", "edit-text", mode="insert"
     )  # Open Text editor with contents of your current text box
+    config.bind("<Ctrl-w>", "tab-close", mode="insert")  # Close tab
     # Tab Navigation in Insert Mode
     config.bind("<Ctrl-Tab>", "tab-next", mode="insert")  # Next Tab
     config.bind("<Ctrl-Shift-Tab>", "tab-prev", mode="insert")  # Previous Tab
+    config.bind("<Ctrl-PgDown>", "tab-next", mode="insert")  # Next Tab
+    config.bind("<Ctrl-PgUp>", "tab-prev", mode="insert")  # Previous Tab
 
     config.bind("<Ctrl-1>", "tab-focus 1", mode="insert")  # Focus tab 1
     config.bind("<Ctrl-2>", "tab-focus 2", mode="insert")  # Focus tab 2

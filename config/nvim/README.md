@@ -1,4 +1,4 @@
-![neovim](https://i.imgur.com/Rd4OgU9.png) 
+![neovim](https://imgur.com/1LvtEyi.png)
 # Features
 - Telescope FZF
 - Use's Custom version of One Dark color scheme

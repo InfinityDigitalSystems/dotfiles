@@ -1,0 +1,9 @@
+#!/bin/sh
+light-locker &
+clipmenud &
+udiskie &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dunst &
+unclutter &
+nextcloud --background &
+slimbookbattery --minimize &

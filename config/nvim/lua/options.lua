@@ -19,7 +19,7 @@ o.ignorecase = true                       -- ignore case in search patterns
 o.mouse = "a"                             -- allow the mouse to be used in neovim
 o.pumheight = 10                          -- pop up menu height
 o.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-o.showtabline = 2                         -- always show tabs
+o.showtabline = 0                         -- always show tabs
 o.smartcase = true                        -- smart case
 o.smartindent = true                      -- make indenting smarter again
 o.splitbelow = true                       -- force all horizontal splits to go below current window
@@ -42,8 +42,6 @@ o.title = true                            -- the font used in graphical neovim a
 o.titlestring = "NVIM - %<%F%="
 o.titlelen = 100
 o.spelllang = "en_au"
--- o.laststatus = 0
--- vim.cmd("set laststatus=0 ruler")
 -- o.spell = true
 
 -- Folding is handled by lua/plugins/folding

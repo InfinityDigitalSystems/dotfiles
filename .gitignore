@@ -1,7 +1,9 @@
 config/nvim/lazy-lock.json
+config/nvim/spell
 config/qtile/__pycache__
 config/qutebrowser/__pycache__/
 config/qutebrowser/autoconfig.yml
+config/qutebrowser/qsettings/
 config/qutebrowser/.idea/
 config/qutebrowser/bookmarks/
 config/qutebrowser/bookmarks/urls

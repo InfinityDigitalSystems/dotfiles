@@ -1,30 +1,30 @@
 [colors]
 [colors.bright]
-black = "0x202122"
-blue = "0x37AAD1"
-cyan = "0x42D7D4"
-green = "0x7EC44F"
-magenta = "0xC76BC4"
-red = "0xF56666"
-white = "0xF1F1E4"
-yellow = "0xFFDE0A"
+black = "0x101012"
+blue = "0x68aee8"
+cyan = "0x48C5D6"
+green = "0x8fb573"
+magenta = "0xD185E0"
+red = "0xED5A66"
+white = "0xF8F8F2"
+yellow = "0xDDC96F"
 
 [colors.normal]
-black = "0x191A1A"
-blue = "0x2494BA"
-cyan = "0x2DCDCD"
-green = "0x558E2E"
-magenta = "0xC054BC"
-red = "0xE84545"
-white = "0xF1F1E4"
-yellow = "0xFACC00"
+black = "0x1b1c1e"
+blue = "0x57a5e5"
+cyan = "0x37A8B7"
+green = "0x658e59"
+magenta = "0xbb70d2"
+red = "0xde5d68"
+white = "0xa7aab0"
+yellow = "0xdbb671"
 
 [colors.primary]
-background = "0x191A1A"
-foreground = "0xF1F1E4"
+background = "0x232326"
+foreground = "0xa7aab0"
 
 [font]
-size = 6
+size = 9
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
@@ -43,4 +43,7 @@ family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [window]
-opacity = 0.95
+opacity = 0.9
+
+[env]
+TERM="xterm-256color"

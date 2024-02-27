@@ -5,10 +5,46 @@ from libqtile.lazy import lazy
 import subprocess
 
 
+from libqtile import bar, hook
+from libqtile.widget import base
+
+
+class CurrentScreen(base._TextBox):
+    """
+    Custom modification of the current screen widget that changes the 
+    colour of the background instead of the foreground
+
+    Indicates whether the screen this widget is on is currently active or not
+    """
+
+    defaults = [
+        ("active_text", "A", "Text displayed when the screen is active"),
+        ("inactive_text", "I", "Text displayed when the screen is inactive"),
+        ("active_color", "00ff00", "Color when screen is active"),
+        ("inactive_color", "ff0000", "Color when screen is inactive"),
+    ]
+
+    def __init__(self, width=bar.CALCULATED, **config):
+        base._TextBox.__init__(self, "", width, **config)
+        self.add_defaults(CurrentScreen.defaults)
+
+    def _configure(self, qtile, bar):
+        base._TextBox._configure(self, qtile, bar)
+        hook.subscribe.current_screen_change(self.update_text)
+        self.update_text()
+
+    def update_text(self):
+        if self.qtile.current_screen == self.bar.screen:
+            self.background = self.active_color
+            self.update(self.active_text)
+        else:
+            self.background = self.inactive_color
+            self.update(self.inactive_text)
+
+
 def refresh_system(qtile):
-    qtile.cmd_restart()
-    home = os.path.expanduser("~/.config/qtile/scripts/refresh_system")
-    subprocess.call([home])
+    qtile.cmd_reload_config()
+    lazy.spawn("autorandr --change")
 
 
 def float_to_front(qtile):

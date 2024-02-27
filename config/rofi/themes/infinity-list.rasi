@@ -1,46 +1,16 @@
-/*
-             :=*%+:              .-==-.
-          -+####@@@@#=.       :-++++++++-:           Brodie Henry
-      .=*#######@@@@@@@%+:.:=++++++++++++++=:.       brodie@infinitydigital.services
-      **########@@@@@@@%*+++++++++++++++++++**
-      *****#####@@@%#*+++++++++++++++++++*****       Infinity Digital
-      *********#%*+++++++++++++++++++*********       https://Infinitydigital.systems/
-      *******+++++++++++++++++++*#@@###*******
-      ****+++++++++++++++++++*%@@@@@######****
-      =++++++++++++++++++=+%@@@@@@@@#########+       Copyright (c) 2023 Infinity Digital
-        :-++++++++++++-:    -*@@@@@@######+:         Copyright (c) 2023 Brodie Henry
-           .:=++++=:.          :+%@@##*=.
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.*/
-
 * {
     font: "JetBrainsMono Nerd Font 12";
     foreground: #F1F1E4;
     background-color: transparent;
-    window-background: #191A1ACC;
-    input-background:  #2494BA;
-    active-background: #2494BA;
-    urgent-background: #E84545;
-    urgent-foreground: #202122;
-    selected-background: #575C60;
+    window-background: #1b1c1eD9;
+    input-background:  #57a5e5;
+    input-foreground:  #1b1c1e;
+    active-background: #57a5e5;
+    urgent-background: #de5d68;
+    urgent-foreground: #1b1c1e;
+    selected-background: #5a5b5e;
     selected-urgent-background: @selected-background;
-    selected-active-background: #202122;
+    selected-active-background: #1b1c1e;
     separatorcolor: @input-background;
     bordercolor: @input-background;
     padding: 0;
@@ -95,10 +65,20 @@ window {
     background-color: @input-background;
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
     font-weight: bold;
+    text-color: @input-foreground;
+}
+#prompt {
+    text-color: @input-foreground;
+    text-style: underline;
+}
+#entry {
+    text-color: @input-foreground;
+    text-style: italic;
 }
 #textbox-prompt-colon {
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @input-foreground;
+    text-style: underline;
 }

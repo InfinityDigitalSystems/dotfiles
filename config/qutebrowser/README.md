@@ -1,6 +1,4 @@
-# IDS QUTEBROWSER CONFIG
-
-![](https://i.imgur.com/wdroZeY.png)  
+![Qutebrowser](https://i.imgur.com/8gqwEDq.png)
 
 ## Dependencies
 > Below install commands are asuming you are running arch and have pip installed

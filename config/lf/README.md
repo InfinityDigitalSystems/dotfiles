@@ -1,4 +1,4 @@
-![screenshot](https://i.imgur.com/mJbSLGT.png) 
+![lf](https://imgur.com/TxcWlQQ.png)
 # Features
 - Previews using [lfimg](https://github.com/thimc/lfimg/tree/master) 
 - LF CD on exit

@@ -1,13 +1,13 @@
 COLORS = {
-    "highlight": "#2494BA",
-    "urgent": "#E84545",
-    "text": "#F1F1E4",
-    "grey": "#575C60",
-    "dark": "#202122",
-    "darker": "#191A1A",
-    "magenta": "#C054BC",
-    "orange": "#F1A727",
-    "green": "#5B9E2E",
+    "highlight": "#57a5e5",
+    "urgent": "#de5d68",
+    "text": "#F8F8F2",
+    "grey": "#37383d",
+    "dark": "#232326",
+    "darker": "#101012",
+    "magenta": "#bb70d2",
+    "orange": "#c49060",
+    "green": "#8fb573",
 }
 
 

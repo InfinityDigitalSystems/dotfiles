@@ -3,44 +3,36 @@ from libqtile.config import Group, ScratchPad, DropDown, Match
 
 
 class Layouts:
-    def __init__(self, colors, margins, font):
+    def __init__(self, colors, font):
         self.colors = colors
-        self.margins = margins
         self.font = font
 
     def get_layouts(self):
         layouts = [
-            layout.Max(margin=-self.margins),
-            # layout.MonadTall(
-            #     margin=self.margins*3,
-            #     single_margin=self.margins * 3,
-            #     border_width=2,
-            #     border_normal=self.colors["darkgrey"], border_focus=self.colors["blue"],
-            #     single_border_width = 0
-            #     ),
+            layout.Max(),
             layout.Columns(
-                margin=int(self.margins / 3),
-                margin_on_single=self.margins * 2,
-                border_width=3,
+                margin=0,
+                margin_on_single=30,
+                border_width=2,
                 grow_amount=5,
-                border_normal=self.colors["darkgrey"],
+                border_normal=self.colors["dark1"],
                 border_focus=self.colors["blue"],
             ),
-            # layout.TreeTab(
-            #     bg_color=self.colors["darker"],
-            #     fontsize=13,
-            #     active_bg=self.colors["blue"],
-            #     active_fg=self.colors["darker"],
-            #     inactive_bg=self.colors["darkgrey"],
-            #     margin_left=-self.margins,
-            # ),
+            layout.Bsp(
+                margin=0,
+                margin_on_single=30,
+                border_width=2,
+                grow_amount=5,
+                border_normal=self.colors["dark1"],
+                border_focus=self.colors["blue"],
+            ),
         ]
         return layouts
 
     def get_floating_layout(self):
         floating_layout = layout.Floating(
             border_width=4,
-            border_normal=self.colors["darkgrey"],
+            border_normal=self.colors["dark1"],
             border_focus=self.colors["blue"],
             float_rules=[
                 # Run the utility of `xprop` to see the wm class and name of an X client.
@@ -80,11 +72,11 @@ class Groups:
         default_dropdown_settings = {
             "on_focus_lost_hide": True,
             "warp_pointer": True,
-            "height": 0.7,
+            "height": 0.8,
             "opacity": 0.95,
-            "width": 0.65,
-            "x": 0.175,
-            "y": 0.15,
+            "width": 0.8,
+            "x": 0.1,
+            "y": 0.1,
         }
 
         dropdowns = [
@@ -107,7 +99,7 @@ class Groups:
             DropDown("calendar", "kitty -e cal", **default_dropdown_settings),
             # User Apps
             DropDown(
-                "terminal", f'{apps["terminal"]} -T DTTY', **default_dropdown_settings
+                "terminal", f'{apps["terminal"]}', **default_dropdown_settings
             ),
             DropDown(
                 "file_manager",
@@ -127,7 +119,8 @@ class Groups:
                 x=0.35,
                 y=0.0,
             ),
-            DropDown("music_player", apps["music_player"], **default_dropdown_settings),
+            DropDown("music_player",
+                     apps["music_player"], **default_dropdown_settings),
             DropDown(
                 "notes",
                 apps["notes"],

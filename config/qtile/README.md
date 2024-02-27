@@ -1,4 +1,4 @@
-![screenshot](https://i.imgur.com/CorPYfL.png) 
+![screenshot](https://i.imgur.com/gp7o6Xj.png) 
 # Dependencies 
 
 ## Core
@@ -25,7 +25,6 @@
 > These are the apps that are used by default
  - **audio_control** `sudo pacman -S pulsemixer`
  - **music_player** `yay -S spotify`
- - **bluetooth_control** `yay -S bluetuith`
  - **web_browser** `sudo pacman -S qutebrowser`
  - **password_manager** `sudo pacman -S bitwarden`
  - **file_manager** `sudo pacman -S lf`
@@ -47,13 +46,6 @@ This config uses enviroment variables for setting a few basic options.
 ### Screens
 Please set the enviroment variable `SCREENS` to the number of screens you would like qtile to setup
 > If there is no enviroment variable set for `SCREENS` it will default to 3
-#### Screen Order
-> These enviroment vairables will be used for switching between screens
-> If no values default xrandr index order will be used
-> You can see screen index by using `xrandr --listmonitors`
-- SCREEN_1 - Set this to the xrandr screen index for this screen
-- SCREEN_2 - Set this to the xrandr screen index for this screen
-- SCREEN_3 - Set this to the xrandr screen index for this screen
 ### Device Type
 Please set the enviroment variable `DEVICE_TYPE` to `LAPTOP` to enable laptop widgets like `battery`, `backlight`
 > If you would like to use the backlight widget you will need to uncomment it under screens.py and set the BACKLIGHT enviroment variable to your backlight
@@ -74,6 +66,10 @@ Please set the enviroment variable `DEVICE_TYPE` to `LAPTOP` to enable laptop wi
  - **<XF86AudioPlay">** _Toggle Play/Pause using `mpris2controller`_
  - **<XF86AudioNext">** _Skip to next track using `mpris2controller`_
  - **<XF86AudioPrev">** _Skip to previous track using `mpris2controller`_
+ - **<MOD, "up">** _Focus shift up_
+ - **<MOD, "down">** _Focus shift down_
+ - **<MOD, "left">** _Focus shift left_
+ - **<MOD, "right">** _Focus shift right_
  - **<MOD, "k">** _Focus shift up_
  - **<MOD, "j">** _Focus shift down_
  - **<MOD, "h">** _Focus shift left_
@@ -140,6 +136,10 @@ Please set the enviroment variable `DEVICE_TYPE` to `LAPTOP` to enable laptop wi
  - **<MOD, "j">** _Focus shift down_
  - **<MOD, "h">** _Focus shift left_
  - **<MOD, "l">** _Focus shift right_
+ - **<MOD, "up">** _Focus shift up_
+ - **<MOD, "down">** _Focus shift down_
+ - **<MOD, "left">** _Focus shift left_
+ - **<MOD, "right">** _Focus shift right_
  - **<"shift", "h">** _Grow current window to left, Shrink floating window horizontally__
  - **<"shift", "l">** _Grow current window to right, Grow floating window horizontally_
  - **<"shift", "j">** _Grow current window down, Grow floating window vertically_
@@ -148,6 +148,14 @@ Please set the enviroment variable `DEVICE_TYPE` to `LAPTOP` to enable laptop wi
  - **<"mod1", "l">** _Move current window to the right_
  - **<"mod1", "j">** _Move current window down_
  - **<"mod1", "k">** _Move current window up_
+ - **<"shift", "left">** _Grow current window to left, Shrink floating window horizontally__
+ - **<"shift", "right">** _Grow current window to right, Grow floating window horizontally_
+ - **<"shift", "down">** _Grow current window down, Grow floating window vertically_
+ - **<"shift", "up">** _Grow current window up, Shrink floating window vertically_ 
+ - **<"mod1", "left">** _Move current window to the left_
+ - **<"mod1", "right">** _Move current window to the right_
+ - **<"mod1", "down">** _Move current window down_
+ - **<"mod1", "up">** _Move current window up_
 
 # Custom behaivor / plugins
 ## Traversing

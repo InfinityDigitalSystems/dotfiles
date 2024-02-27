@@ -6,7 +6,7 @@ local m = {
 local colors = {
   bg = "#232326",
   bg1 = "#2c2d31",
-	bg2 = "#35363b",
+  bg2 = "#35363b",
   bg3 = "#37383d",
   fg = "#a7aab0",
   red = "#de5d68",
@@ -19,14 +19,15 @@ local colors = {
 }
 local lualine_theme = {
   inactive = {
+    a = { fg = colors.bg, bg = colors.purple },
     b = { fg = colors.fg, bg = colors.bg },
     c = { fg = colors.fg, bg = colors.bg },
     z = { fg = colors.fg, bg = colors.bg1 },
   },
   normal = {
     a = { fg = colors.bg, bg = colors.blue, gui = "bold" },
-    b = { fg = colors.fg, bg = colors.bg1, gui = "bold"},
-    c = { fg = colors.fg, bg = colors.bg,},
+    b = { fg = colors.fg, bg = colors.bg2, gui = "bold" },
+    c = { fg = colors.fg, bg = colors.bg, gui = "bold" },
   },
   visual = { a = { fg = colors.bg, bg = colors.purple, gui = "bold" } },
   replace = { a = { fg = colors.bg, bg = colors.red, gui = "bold" } },
@@ -35,7 +36,7 @@ local lualine_theme = {
   terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = "bold" } },
 }
 local function spacer()
-  return " "
+  return "◉"
 end
 
 m.config = function()
@@ -45,25 +46,20 @@ m.config = function()
       theme = lualine_theme,
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
-      disabled_filetypes = { "alpha"},
+      disabled_filetypes = {
+        winbar = {"alpha", "NvimTree"},
+        statusline = {"alpha"}
+    },
       ignore_focus = {},
       always_divide_middle = true,
-      globalstatus = false,
+      globalstatus = true,
       refresh = {
         statusline = 1000,
         tabline = 1000,
         winbar = 1000,
       },
     },
-    inactive_winbar = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {},
-    },
-    winbar = {
+    inactive_sections = {
       lualine_a = {},
       lualine_b = {},
       lualine_c = {},
@@ -72,6 +68,8 @@ m.config = function()
       lualine_z = {},
     },
     tabline = {
+    },
+    sections = {
       lualine_a = { "mode" },
       lualine_b = {
         {
@@ -96,21 +94,26 @@ m.config = function()
             NvimTree = 'Explorer'
 
           }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
+          -- buffers_color = {
+          --   -- Same values as the general color option can be used here.
+          --   active = 'lualine_{normal}_normal', -- Color for active buffer.
+          --   inactive = 'lualine_{insert}_inactive', -- Color for inactive buffer.
+          -- },
 
           symbols = {
-            modified = ' ●', -- Text to show when the buffer is modified 
+            modified = ' ●', -- Text to show when the buffer is modified
             alternate_file = '', -- Text to show to identify the alternate file
             directory = '', -- Text to show when the buffer is a directory
           },
         }
       },
-      lualine_c = {"spacer"},
+      lualine_c = {},
       lualine_x = {},
       lualine_y = {},
-      lualine_z = {},
+      lualine_z = { spacer },
     },
-    sections = {
-      lualine_a = {},
+    winbar = {
+      lualine_a = { spacer },
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = { { "filename", path = 1 } },
       lualine_x = { "encoding", "fileformat", "filetype" },
@@ -118,8 +121,8 @@ m.config = function()
       lualine_z = { "location" },
 
     },
-    inactive_sections = {
-      lualine_a = {},
+    inactive_winbar = {
+      lualine_a = { spacer },
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = { { "filename", path = 1 } },
       lualine_x = { "encoding", "fileformat", "filetype" },
@@ -129,8 +132,8 @@ m.config = function()
     extensions = {
       "fzf",
       "lazy",
-      "nvim-tree",
       "mason",
+      "lazy",
       "toggleterm"
     },
   })
