@@ -17,6 +17,8 @@ bitwarden
 bitwarden-cli 
 bluez
 bluez-utils
+python-dateutil
+python-pytz
 brightnessctl
 catdoc 
 chafa 
