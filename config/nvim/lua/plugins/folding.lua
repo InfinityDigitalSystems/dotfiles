@@ -5,9 +5,6 @@ local m = {
 }
 
 m.config = function()
-	vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-	vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-
 	-- Tell the server the capability of foldingRange,
 	-- Neovim hasn't added foldingRange to default capabilities, users must add it manually
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
