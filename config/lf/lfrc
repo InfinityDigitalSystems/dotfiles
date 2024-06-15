@@ -78,24 +78,28 @@ cmd link %{{
 
 cmd extract ${{
 	set -f
+	# Get the base name of the file without extension
+	dirname=$(basename "$f" | sed 's/\(.*\)\..*/\1/')
+	# Create the directory
+	mkdir -p "$dirname"
 	case $f in
 		*.tar.bz|*.tar.bz2|*.tbz|*.tbz2)
-			tar xjvf $f
+			tar xjvf "$f" -C "$dirname"
 			;;
 		*.tar.gz|*.tgz)
-			tar xzvf $f
+			tar xzvf "$f" -C "$dirname"
 			;;
 		*.tar.xz|*.txz)
-			tar xJvf $f
+			tar xJvf "$f" -C "$dirname"
 			;;
 		*.zip)
-			unzip $f
+			unzip "$f" -d "$dirname"
 			;;
 		*.rar)
-			unrar x $f
+			unrar x "$f" "$dirname"
 			;;
 		*.7z)
-			7z x $f
+			7z x "$f" -o"$dirname"
 	esac
 }}
 
