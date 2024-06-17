@@ -1,25 +1,38 @@
 local m = {
-	"VonHeikemen/lsp-zero.nvim",
-	branch = "v2.x",
-	dependencies = {
-		-- LSP Support
-		{ "neovim/nvim-lspconfig" }, -- Required
-		{ "williamboman/mason.nvim" }, -- Optional
-		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v2.x",
+		dependencies = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{ "williamboman/mason.nvim" }, -- Optional
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-		-- Autocompletion
-		{ "hrsh7th/nvim-cmp" }, -- Required
-		{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-		{ "L3MON4D3/LuaSnip" }, -- Required
-		{ "hrsh7th/cmp-buffer" }, -- Optional
-		{ "hrsh7th/cmp-path" }, -- Optional
-		{ "saadparwaiz1/cmp_luasnip" }, -- Optional
-		{ "rafamadriz/friendly-snippets" }, -- Optional
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "L3MON4D3/LuaSnip" }, -- Required
+			{ "hrsh7th/cmp-buffer" }, -- Optional
+			{ "hrsh7th/cmp-path" }, -- Optional
+			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
+			{ "rafamadriz/friendly-snippets" }, -- Optional
+		},
+		cond = not vim.g.vscode,
 	},
-	cond = not vim.g.vscode,
+	{
+		"windwp/nvim-autopairs",
+		cond = not vim.g.vscode,
+	},
+	{
+		"stevearc/conform.nvim",
+		dependencies = {
+			{ "zapling/mason-conform.nvim" },
+			{ "williamboman/mason.nvim" },
+		},
+	},
 }
 
-m.config = function()
+m[1].config = function()
 	local lsp = require("lsp-zero")
 
 	lsp.on_attach(function(client, bufnr)
@@ -29,9 +42,10 @@ m.config = function()
 
 	lsp.ensure_installed({
 		"lua_ls",
-		"emmet_language_server",
 		"html",
 		"cssls",
+		"jedi_language_server",
+		"phpactor",
 	})
 
 	-- Fix Undefined global 'vim'
@@ -117,5 +131,73 @@ m.config = function()
 		end,
 	})
 end
+
+m[2].config = function()
+	local npairs = require("nvim-autopairs")
+	npairs.setup({
+		fast_wrap = {},
+	})
+	-- CMP integration
+	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+	local cmp_status_ok, cmp = pcall(require, "cmp")
+	if not cmp_status_ok then
+		return
+	end
+	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+end
+
+m[3].config = function()
+	local conform = require("conform")
+	local mason_conform = require("mason-conform")
+	conform.setup({
+		formatters_by_ft = {
+			-- Conform will run multiple formatters sequentially
+			-- python = { "isort", "black" },
+			-- Use a sub-list to run only the first available formatter
+			-- javascript = { { "prettierd", "prettier" } },
+			--
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
+			svelte = { "prettier" },
+			css = { "prettier" },
+			html = { "prettier" },
+			json = { "prettier" },
+			yaml = { "prettier" },
+			markdown = { "prettier" },
+			graphql = { "prettier" },
+			liquid = { "prettier" },
+			lua = { "stylua" },
+			python = { "isort", "black" },
+		},
+		format_on_save = {
+			lsp_fallback = true,
+			async = false,
+			timeout_ms = 1000,
+		},
+	})
+
+	-- Install formaters
+	mason_conform.setup({
+		ensure_installed = {
+			"stylua",
+			-- "mypy",
+			"ruff",
+			"black",
+			"prettier",
+		},
+	})
+
+	vim.keymap.set({ "n", "v" }, "<leader>lf", function()
+		conform.format({
+			lsp_fallback = true,
+			async = false,
+			timeout_ms = 1000,
+		})
+	end, { desc = "Format file or range (in visual mode)" })
+end
+
+m[3].event = { "BufReadPre", "BufNewFile" }
 
 return m

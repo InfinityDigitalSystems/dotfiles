@@ -1,9 +1,66 @@
 local m = {
-	"folke/which-key.nvim",
-	cond = not vim.g.vscode,
+	{
+		"nvchad/nvim-colorizer.lua",
+		cond = not vim.g.vscode,
+	},
+	{
+		"lewis6991/impatient.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"numtostr/comment.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"folke/which-key.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"mbbill/undotree",
+		cond = not vim.g.vscode,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"andrewferrier/wrapping.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"famiu/bufdelete.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"jghauser/follow-md-links.nvim",
+	},
+	{
+		"lambdalisue/suda.vim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		ft = "markdown",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		cond = not vim.g.vscode,
+	},
 }
 
-m.config = function()
+m[1].config = function()
+	require("colorizer").setup()
+end
+
+m[2].init = function()
+	require("impatient").enable_profile()
+end
+
+m[3].config = function()
+	require("Comment").setup()
+end
+
+m[4].config = function()
 	vim.o.timeout = true
 	vim.o.timeoutlen = 50
 	local which_key = require("which-key")
@@ -65,6 +122,18 @@ m.config = function()
 		noremap = true, -- use `noremap` when creating keymaps
 		nowait = true, -- use `nowait` when creating keymaps
 	})
+end
+
+m[5].config = function()
+	vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { noremap = true, silent = true, desc = "UNDO Tree" })
+end
+
+m[6].config = function()
+	require("gitsigns").setup()
+end
+
+m[7].config = function()
+	require("wrapping").setup()
 end
 
 return m

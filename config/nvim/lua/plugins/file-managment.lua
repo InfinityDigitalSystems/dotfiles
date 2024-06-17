@@ -20,15 +20,33 @@ local function on_attach(bufnr)
 end
 
 local m = {
-	"nvim-tree/nvim-tree.lua",
-	dependencies = {
-		"plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
+	{
+		"lmburns/lf.nvim",
+		dependencies = { "toggleterm.nvim" },
+		cond = not vim.g.vscode,
 	},
-	cond = not vim.g.vscode,
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = {
+			"plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		cond = not vim.g.vscode,
+	},
+	{
+		"ahmedkhalf/project.nvim",
+		cond = not vim.g.vscode,
+	},
 }
 
-m.config = function()
+m[1].config = function()
+	-- disable netrw at the very start of your init.lua (strongly advised)
+	vim.g.loaded_netrw = 1
+	vim.g.loaded_netrwPlugin = 1
+	require("lf").setup({ escape_quit = true, border = "single", focus_on_open = true, winblend = 2 })
+end
+
+m[2].config = function()
 	-- disable netrw at the very start of your init.lua (strongly advised)
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
@@ -93,6 +111,17 @@ m.config = function()
 					},
 				},
 			},
+		},
+	})
+end
+
+m[3].config = function()
+	require("telescope").load_extension("projects")
+	require("project_nvim").setup({
+		show_hidden = true,
+		update_focused_file = {
+			enable = true,
+			update_root = true,
 		},
 	})
 end
