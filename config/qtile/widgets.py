@@ -1,7 +1,8 @@
+import os
+
+import plugins
 from libqtile import widget
 from libqtile.lazy import lazy
-import os
-import plugins
 
 
 class Widgets:
@@ -24,8 +25,8 @@ class Widgets:
                 },
             ),
             widget.TaskList(
-                icon_size=17,
-                max_title_width=500,
+                icon_size=22,
+                max_title_width=300,
                 highlight_method="block",
                 borderwidth=0,
                 margin=0,
@@ -35,8 +36,8 @@ class Widgets:
                 spacing=8,
                 border=colors["dark1"],
                 unfocused_border=colors["dark3"],
-                theme_mode="preferred"
-                # theme_path
+                theme_mode="preferred",
+                theme_path="/usr/share/icons/Papirus-Dark/",
             ),
             widget.Prompt(
                 foreground=colors["dark4"],
@@ -65,7 +66,8 @@ class Widgets:
                 rounded=False,
                 background=colors["dark1"],
                 margin_x=0,
-                hide_unused=True),
+                hide_unused=True,
+            ),
         ]
         self.right_widgets = [
             widget.Spacer(5, background=colors["dark1"]),
@@ -189,8 +191,4 @@ class Widgets:
         )
 
     def get_secondary_widgets(self):
-        return (
-            self.left_widgets
-            + self.center_widgets
-            + self.right_widgets
-        )
+        return self.left_widgets + self.center_widgets + self.right_widgets

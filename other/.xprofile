@@ -1,8 +1,0 @@
-autorandr --change
-export EDITOR=nvim
-export DEVICE_TYPE=PC
-export QT_QPA_PLATFORMTHEME=qt5ct
-export SCREENS=2
-export SCREEN_1=1
-export SCREEN_2=0
-xmodmap ~/.Xmodmap

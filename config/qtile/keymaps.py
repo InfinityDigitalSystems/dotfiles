@@ -1,14 +1,15 @@
-from libqtile.config import Key, KeyChord, Click, Drag
-from libqtile.lazy import lazy
-import plugins
 import os
+
+import plugins
+from libqtile.config import Click, Drag, Key, KeyChord
+from libqtile.lazy import lazy
 
 # Modifer Key
 MOD = "MOD4"  # mod4 = Super / Windows / Command
 
 # Screens
-# screen_key = {0: 0, 1: 1, 2: 2}
-screen_key = {x: x for x in range(int(os.environ["SCREENS"]))}
+screen_key = {0: 0, 1: 1, 2: 2}
+# screen_key = {x: x for x in range(int(os.environ["SCREENS"]))}
 
 try:
     screen_key[0] = int(os.environ["SCREEN_1"])

@@ -1,7 +1,0 @@
-keycode 224 = XF86AudioPlay 
-keycode 226 = XF86AudioPrev
-keycode 231 = XF86AudioNext
-clear Lock
-keycode 66 = Escape
-keycode 107 = Super_R
-

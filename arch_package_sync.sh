@@ -111,16 +111,14 @@ pdfjs
 
 # List of AUR packages
 aur_packages=(
-mcomix 
+# mcomix 
 xapp-epub-thumbnailer
-wkhtmltopdf-static
+# wkhtmltopdf-static
 bibata-cursor-theme 
-onlyoffice-bin 
 papirus-linux-universe 
 mpris2controller-git 
 unclutter-xfixes-git 
 ueberzugpp
-chromium-widevine 
 brave-bin 
 spotify
 cp-p-git

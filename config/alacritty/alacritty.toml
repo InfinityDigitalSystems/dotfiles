@@ -43,7 +43,7 @@ family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [window]
-opacity = 0.9
+opacity = 1
 
 [env]
 TERM="xterm-256color"
