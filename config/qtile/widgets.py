@@ -25,7 +25,7 @@ class Widgets:
                 },
             ),
             widget.TaskList(
-                icon_size=22,
+                icon_size=20,
                 max_title_width=300,
                 highlight_method="block",
                 borderwidth=0,
@@ -36,7 +36,7 @@ class Widgets:
                 spacing=8,
                 border=colors["dark1"],
                 unfocused_border=colors["dark3"],
-                theme_mode="preferred",
+                theme_mode="fallback",
                 theme_path="/usr/share/icons/Papirus-Dark/",
             ),
             widget.Prompt(
