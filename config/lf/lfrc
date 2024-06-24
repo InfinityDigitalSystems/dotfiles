@@ -191,7 +191,7 @@ map gi cd ~/Nextcloud/
 map gc cd ~/.config
 map gb cd ~/.config/lf/bookmarks/
 map gt cd ~/.local/share/Trash/files
-map gr cd ~/repos/
+map gr cd ~/projects/
 map gm cd /run/media/
 map L jump-next
 map H jump-prev

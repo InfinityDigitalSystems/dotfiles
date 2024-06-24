@@ -1,6 +1,6 @@
 [colors]
 [colors.bright]
-black = "0x101012"
+black = "0xF8F8F2"
 blue = "0x68aee8"
 cyan = "0x48C5D6"
 green = "0x8fb573"
@@ -11,7 +11,7 @@ yellow = "0xDDC96F"
 
 [colors.normal]
 black = "0x1b1c1e"
-blue = "0x57a5e5"
+blue = "0x388BCF"
 cyan = "0x37A8B7"
 green = "0x658e59"
 magenta = "0xbb70d2"
