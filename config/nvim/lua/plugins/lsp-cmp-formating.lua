@@ -169,7 +169,7 @@ m[3].config = function()
 			graphql = { "prettier" },
 			liquid = { "prettier" },
 			lua = { "stylua" },
-			python = { "isort", "black" },
+			python = { "isort", "black", "ruff" },
 		},
 		format_on_save = {
 			lsp_fallback = true,

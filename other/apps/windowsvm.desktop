@@ -1,6 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=Windows 10
-Comment=Reboots System
-Icon=win
-Exec="/home/brodie/.local/share/applications/infinityos/run_win10_vm.sh"
+Comment=Open Virt Manager Windows
+Exec=virt-manager --connect qemu:///system --show-domain-console win10

@@ -2,5 +2,4 @@
 Type=Application
 Name=Reboot System
 Comment=Reboots System
-Icon=Infinity
-Exec="/home/brodie/.local/share/applications/infinityos/system_reboot.sh"
+Exec=reboot

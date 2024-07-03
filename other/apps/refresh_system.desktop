@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Refresh System
-Comment=Refreshes system
-Icon=Infinity
-Exec=/home/brodie/.local/share/applications/infinityos/refresh_system.sh
