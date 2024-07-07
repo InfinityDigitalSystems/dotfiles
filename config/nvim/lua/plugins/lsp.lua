@@ -47,18 +47,14 @@ return {
 		-- vim.keymap.set({ "i" }, "<C-K>", function()
 		-- 	ls.expand()
 		-- end, { silent = true })
-		vim.keymap.set({ "i", "s" }, "<Tab>", function()
-			ls.jump(1)
-		end, { silent = true })
-		vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-			ls.jump(-1)
-		end, { silent = true })
-
-		vim.keymap.set({ "i", "s" }, "<C-E>", function()
-			if ls.choice_active() then
-				ls.change_choice(1)
-			end
-		end, { silent = true })
+		-- vim.keymap.set({ "i", "s" }, "<Tab>", function() ls.jump(1) end, { silent = true })
+		-- vim.keymap.set({ "i", "s" }, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
+		--
+		-- vim.keymap.set({ "i", "s" }, "<C-E>", function()
+		-- 	if ls.choice_active() then
+		-- 		ls.change_choice(1)
+		-- 	end
+		-- end, { silent = true })
 
 		-- CMP
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -78,8 +74,8 @@ return {
 				["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
 				["<C-up>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-down>"] = cmp.mapping.select_next_item(cmp_select),
-				["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
+				-- ["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
+				-- ["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
 				-- Cycle through docs with ctrl + b/f (back / forward)
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -90,7 +86,41 @@ return {
 				-- Accept completion with <CR> (return / enter)
 				-- Accept currently selected item. If none selected, `select` first item.
 				-- Set `select` to `false` to only confirm explicitly selected items.
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				-- ["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+				["<CR>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						if ls.expandable() then
+							ls.expand()
+						else
+							cmp.confirm({
+								select = true,
+							})
+						end
+					else
+						fallback()
+					end
+				end),
+
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif ls.locally_jumpable(1) then
+						ls.jump(1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif ls.locally_jumpable(-1) then
+						ls.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },

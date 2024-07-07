@@ -1,5 +1,5 @@
-import theme
 import keymaps
+import theme
 
 # Sets the config variable
 config = config
@@ -116,6 +116,7 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt",
     "https://easylist.to/easylist/easylist.txt",
 ]
+c.content.blocking.whitelist = ["https://youtube.com/"]
 # Which method of blocking ads should be used.
 #   - auto: Use Brave's ABP-style adblocker if available, host blocking otherwise
 #   - adblock: Use Brave's ABP-style adblocker

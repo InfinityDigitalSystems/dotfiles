@@ -23,7 +23,7 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
-				php = { "phpactor" },
+				php = { "pretty-php", "php_cs_fixer", "phpcs" },
 				python = { "isort", "black", "ruff" },
 			},
 			format_on_save = {
@@ -40,6 +40,9 @@ return {
 				"ruff",
 				"black",
 				"prettier",
+				"pretty-php",
+				"php_cs_fixer",
+				"phpcs",
 			},
 		})
 

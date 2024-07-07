@@ -39,7 +39,7 @@ m[1].init = function()
 			additional_vim_regex_highlighting = true,
 		},
 		autopairs = { enable = true },
-		indent = { enable = { "php" }, disable = { "yaml" } },
+		indent = { enable = false, disable = { "yaml" } },
 		context_commentstring = {
 			enable = true,
 			enable_autocmd = false,

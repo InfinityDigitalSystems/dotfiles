@@ -1,13 +1,12 @@
-from libqtile import qtile
-from libqtile import hook
 import os
-import subprocess
-from libqtile.config import Screen
-from libqtile import bar
-import keymaps
-import widgets
-import layouts_and_groups
 import random
+import subprocess
+
+import keymaps
+import layouts_and_groups
+import widgets
+from libqtile import bar, hook, qtile
+from libqtile.config import Screen
 
 
 def get_wallpaper(folder):
@@ -25,8 +24,7 @@ apps = {
     "terminal": "alacritty -e tmux new-session -A -s tty",
     # Launches in a dropdown
     "file_manager": f"alacritty -T 'File Manager' -e tmux new-session -A -s files '{file_man}'",
-    "calculator": "qalculate-gtk",  # launches in a dropdown
-    "email": "thunderbird",
+    "calculator": "qalculate-gtk",  # launches in a dropdown "email": "thunderbird",
     "screenshot_software": "flameshot gui",
     "emoji_keyboard": "rofi -monitor -1 -show emoji -theme infinity-list",
     "application_launcher": "rofi -show drun -monitor -1 -theme infinity-list",
@@ -63,7 +61,7 @@ colors = {
     "dark_cyan": "#37A8B7",
     "light_red": "#ED5A66",
     "red": "#de5d68",
-    "dark_red": "#833b3b"
+    "dark_red": "#833b3b",
 }
 
 font = "JetBrainsMono Nerd Font Mono"
@@ -96,20 +94,22 @@ try:
 except KeyError:
     screen_count = 3
 screens = []
-screens.append(Screen(
-    top=bar.Bar(widgets.Widgets(colors).get_widgets(), 23),
-    wallpaper=get_wallpaper(desktopwallpapers),
-    wallpaper_mode="fill"
-))
+screens.append(
+    Screen(
+        top=bar.Bar(widgets.Widgets(colors).get_widgets(), 23),
+        wallpaper=get_wallpaper(desktopwallpapers),
+        wallpaper_mode="fill",
+    )
+)
 if screen_count > 1:
-    for _ in range(screen_count-1):
-        screens.append(Screen(
-            top=bar.Bar(
-                widgets.Widgets(colors).get_secondary_widgets(), 23
-            ),
-            wallpaper=get_wallpaper(desktopwallpapers),
-            wallpaper_mode="fill"
-        ))
+    for _ in range(screen_count - 1):
+        screens.append(
+            Screen(
+                top=bar.Bar(widgets.Widgets(colors).get_secondary_widgets(), 23),
+                wallpaper=get_wallpaper(desktopwallpapers),
+                wallpaper_mode="fill",
+            )
+        )
 
 
 # Layouts & Groups
@@ -128,11 +128,10 @@ mouse = keybinds.generate_mouse_keybinds()
 # Runs the auto start script on system startup
 
 
-@ hook.subscribe.startup_once
+@hook.subscribe.startup_once
 def autostart():
     if qtile.core.name == "x11":
         autostart = os.path.expanduser("~/.config/qtile/scripts/autostart-x11")
     elif qtile.core.name == "wayland":
-        autostart = os.path.expanduser(
-            "~/.config/qtile/scripts/autostart-wayland")
+        autostart = os.path.expanduser("~/.config/qtile/scripts/autostart-wayland")
     subprocess.call([autostart])
