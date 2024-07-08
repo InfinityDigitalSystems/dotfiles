@@ -24,7 +24,8 @@ apps = {
     "terminal": "alacritty -e tmux new-session -A -s tty",
     # Launches in a dropdown
     "file_manager": f"alacritty -T 'File Manager' -e tmux new-session -A -s files '{file_man}'",
-    "calculator": "qalculate-gtk",  # launches in a dropdown "email": "thunderbird",
+    "calculator": "qalculate-gtk",  # launches in a dropdown
+    "email": "thunderbird",
     "screenshot_software": "flameshot gui",
     "emoji_keyboard": "rofi -monitor -1 -show emoji -theme infinity-list",
     "application_launcher": "rofi -show drun -monitor -1 -theme infinity-list",
