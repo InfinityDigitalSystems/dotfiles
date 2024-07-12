@@ -30,6 +30,7 @@ return {
 				"cssls", -- CSS
 				"jedi_language_server", -- Python
 				"phpactor", -- PHP
+				"intelephense", -- PHP
 			},
 
 			-- Start LSP
@@ -86,21 +87,21 @@ return {
 				-- Accept completion with <CR> (return / enter)
 				-- Accept currently selected item. If none selected, `select` first item.
 				-- Set `select` to `false` to only confirm explicitly selected items.
-				-- ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-				["<CR>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						if ls.expandable() then
-							ls.expand()
-						else
-							cmp.confirm({
-								select = true,
-							})
-						end
-					else
-						fallback()
-					end
-				end),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				--
+				-- ["<CR>"] = cmp.mapping(function(fallback)
+				-- 	if cmp.visible() then
+				-- 		if ls.expandable() then
+				-- 			ls.expand()
+				-- 		else
+				-- 			cmp.confirm({
+				-- 				select = true,
+				-- 			})
+				-- 		end
+				-- 	else
+				-- 		fallback()
+				-- 	end
+				-- end),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
