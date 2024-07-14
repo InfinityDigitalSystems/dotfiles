@@ -16,7 +16,7 @@ document.addEventListener(
     }
     const ad = [...document.querySelectorAll(".ad-showing")][0];
     if (ad) {
-      document.querySelector("video").currentTime = 1;
+      document.querySelector("video").currentTime = 999999999999;
     }
   },
   true,

@@ -128,6 +128,8 @@ return {
 				{ name = "luasnip" }, -- For luasnip users.
 			}, {
 				{ name = "buffer" },
+				{ name = "path" },
+				{ name = "cmdline" },
 			}),
 			-- formatting = {
 			-- 	fields = { "kind", "abbr", "menu" },
