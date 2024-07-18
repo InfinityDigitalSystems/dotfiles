@@ -71,14 +71,15 @@ keymap("x", "<C-down>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Splits
-table.insert(group_names, { s = { name = "Splits" } })
+table.insert(group_names, { "<leader>s", group = "Splits" })
 keymap("n", "<leader>sv", ":vsplit<CR>", vim.tbl_extend("force", opts, { desc = "Vertical Split" }))
 keymap("n", "<leader>sh", ":split<CR>", vim.tbl_extend("force", opts, { desc = "Horizontal Split" }))
 keymap("n", "<leader>sk", "<C-w>c", vim.tbl_extend("force", opts, { desc = "Window Kill" }))
 
 -- Buffers
 -- Cylce through Buffers
-table.insert(group_names, { b = { name = "Buffers" } })
+table.insert(group_names, { "<leader>b", group = "Buffers" })
+-- table.insert(group_names, { b = { name = "Buffers" } })
 keymap("n", "<C-o>", ":bprevious<CR>", vim.tbl_extend("force", opts, { desc = "Previous Buffer" }))
 keymap("n", "<leader>bp", ":bprevious<CR>", vim.tbl_extend("force", opts, { desc = "Previous Buffer" }))
 keymap("n", "<C-p>", ":bnext<CR>", vim.tbl_extend("force", opts, { desc = "Next Buffer" }))
@@ -167,7 +168,8 @@ keymap(
 )
 
 --excute
-table.insert(group_names, { x = { name = "Execute software" } })
+-- table.insert(group_names, { x = { name = "Execute software" } })
+table.insert(group_names, { "<leader>x", group = "Execute Software" })
 keymap(
 	"n",
 	"<leader>xe",
@@ -177,25 +179,29 @@ keymap(
 keymap("n", "<leader>xg", "<cmd>lua _LAZYGIT_TOGGLE_TERM()<CR>", vim.tbl_extend("force", opts, { desc = "LazyGit" }))
 
 -- Run Code
-table.insert(group_names, { r = { name = "Run Code" } })
+table.insert(group_names, { "<leader>r", group = "Run Code" })
+-- table.insert(group_names, { r = { name = "Run Code" } })
 keymap("n", "<leader>rp", ":w<CR>:TermExec cmd='python %'<CR>", vim.tbl_extend("force", opts, { desc = "Run Python" }))
 keymap("n", "<leader>rl", ":w<CR>:TermExec cmd='lua %'<CR>", vim.tbl_extend("force", opts, { desc = "Run Lua" }))
 keymap("n", "<leader>rm", ":MarkdownPreview<CR>", vim.tbl_extend("force", opts, { desc = "Markdown Preview" }))
 
 -- Quit
-table.insert(group_names, { q = { name = "Quit" } })
+table.insert(group_names, { "<leader>q", group = "Quit" })
+-- table.insert(group_names, { q = { name = "Quit" } })
 keymap("n", "<leader>qS", ":SudaWrite<CR>:xa<CR>:qa<CR>", vim.tbl_extend("force", opts, { desc = "Save as Sudo" }))
 keymap("n", "<leader>qq", ":xa<CR>:qa<CR>", vim.tbl_extend("force", opts, { desc = "Save Quit All" }))
 keymap("n", "<leader>qQ", ":qa!<CR>", vim.tbl_extend("force", opts, { desc = "Quit without saving" }))
 keymap("n", "<leader>Q", ":qa!<CR>", vim.tbl_extend("force", opts, { desc = "Quit without saving" }))
 -- Save
-table.insert(group_names, { w = { name = "Save" } })
+table.insert(group_names, { "<leader>w", group = "Save" })
+-- table.insert(group_names, { w = { name = "Save" } })
 keymap("n", "<leader>wa", ":wa<CR>", vim.tbl_extend("force", opts, { desc = "Save all" }))
 keymap("n", "<leader>ww", ":w<CR>", vim.tbl_extend("force", opts, { desc = "Save" }))
 keymap("n", "<leader>wS", ":SudaWrite<CR>", vim.tbl_extend("force", opts, { desc = "Save as Sudo" }))
 
 -- Find
-table.insert(group_names, { f = { name = "Find" } })
+table.insert(group_names, { "<leader>f", group = "Find" })
+-- table.insert(group_names, { f = { name = "Find" } })
 keymap(
 	"n",
 	"<leader>ff",
@@ -214,7 +220,8 @@ keymap(
 )
 
 -- LSP
-table.insert(group_names, { l = { name = "LSP" } })
+table.insert(group_names, { "<leader>l", group = "LSP" })
+-- table.insert(group_names, { l = { name = "LSP" } })
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -247,6 +254,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Doc string
 keymap("n", "<leader>ld", "<cmd>Neogen<cr>", vim.tbl_extend("force", opts, { desc = "Generate Doc String" }))
-
 -- Returns group_names for which key
 return { group_names = group_names }
