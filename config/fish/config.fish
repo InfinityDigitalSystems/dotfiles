@@ -40,3 +40,9 @@ abbr -a mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pac
 abbr -a mirrord 'sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist'
 abbr -a mirrors 'sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist'
 abbr -a mirrora 'sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist'
+
+# LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+# set -Ux LS_COLORS 'di=0;35:'
+# set -Ux LS_COLORS $LS_COLORS'di=0;35:'
+
+set -Ux LS_COLORS $LS_COLORS'ln=01;36:or=31;01:tw=34:ow=34:st=01;34:di=34:pi=33:so=01;35:bd=33;01:cd=33;01:su=01;32:sg=01;32:ex=01;32:fi=00:'

@@ -141,9 +141,7 @@ return {
 				-- end),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif ls.locally_jumpable(1) then
+					if ls.locally_jumpable(1) then
 						ls.jump(1)
 					else
 						fallback()
@@ -151,9 +149,7 @@ return {
 				end, { "i", "s" }),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif ls.locally_jumpable(-1) then
+					if ls.locally_jumpable(-1) then
 						ls.jump(-1)
 					else
 						fallback()

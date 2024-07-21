@@ -15,3 +15,4 @@ config/lazygit/state.yml
 config/lf/bookmarks/
 .idea/
 .mypy_cache/
+.php-cs-fixer.cache
