@@ -45,7 +45,8 @@ o.spelllang = "en_au"
 -- o.spell = true
 
 -- Folding is handled by lua/plugins/folding
-o.foldcolumn = "0" -- '0' is not bad
+o.foldcolumn = "auto" -- '0' is not bad
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true

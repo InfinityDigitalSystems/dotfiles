@@ -20,7 +20,7 @@ local lualine_theme = {
 		z = { fg = colors.fg, bg = colors.bg1 },
 	},
 	normal = {
-		a = { fg = colors.bg, bg = colors.blue, gui = "bold" },
+		a = { fg = colors.bg, bg = colors.cyan, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.bg2, gui = "bold" },
 		c = { fg = colors.fg, bg = colors.bg, gui = "bold" },
 	},
@@ -81,7 +81,9 @@ m[1].config = function()
 		lualine = {
 			transparent = false, -- lualine center bar transparency
 		},
-		highlights = {}, -- Override highlight groups
+		highlights = {
+			FoldColumn = { fg = colors.fg, bg = colors.bg },
+		}, -- Override highlight groups
 		-- Plugins Config --
 		diagnostics = {
 			darker = true, -- darker colors for diagnostic
@@ -100,7 +102,7 @@ m[2].config = function()
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
 			disabled_filetypes = {
-				winbar = { "alpha", "NvimTree" },
+				winbar = { "alpha", "NvimTree", "toggleterm" },
 				statusline = { "alpha" },
 			},
 			ignore_focus = {},

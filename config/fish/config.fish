@@ -24,7 +24,7 @@ function cdf
 end
 
 # lf
-# abbr -a lf 'lfcd'
+abbr -a lf 'lfcd'
 
 # ll
 abbr -a ll 'ls -alF --color=auto'

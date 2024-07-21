@@ -19,7 +19,14 @@ m.config = function()
 			-- you can add other fields for setting up lsp server in this table
 		})
 	end
-	require("ufo").setup()
+	require("ufo").setup({
+		preview = {
+			win_config = {
+				-- Link the background highlight group of the preview window to the background of the editor
+				-- winhighlight = "Normal:Normal",
+			},
+		},
+	})
 end
 
 return m
