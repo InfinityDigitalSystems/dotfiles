@@ -9,7 +9,7 @@ local colors = {
 	yellow = "#dbb671",
 	blue = "#57a5e5",
 	purple = "#bb70d2",
-	cyan = "#51a8b3",
+	cyan = "#37A8B7",
 	gray = "#5a5b5e",
 }
 local lualine_theme = {
