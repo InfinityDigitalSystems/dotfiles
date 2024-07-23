@@ -16,3 +16,4 @@ config/lf/bookmarks/
 .idea/
 .mypy_cache/
 .php-cs-fixer.cache
+config/fish/fish_variables
