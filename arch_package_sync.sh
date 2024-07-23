@@ -67,7 +67,7 @@ official_packages=(
   qutebrowser 
   reflector
   ripgrep 
-  # rofi 
+  rofi 
   rofi-emoji 
   rust 
   thunar
@@ -120,7 +120,7 @@ aur_packages=(
   brave-bin 
   spotify
   cp-p-git
-  rofi-lbonn-wayland-git
+  # rofi-lbonn-wayland-git
 )
 
 # List of packages to remove
