@@ -331,7 +331,7 @@ class Keybinds:
                     Key([], "m", lazy.group["󱇚"].dropdown_toggle("music_player")),
                     Key([], "p", lazy.group["󱇚"].dropdown_toggle("password_manager")),
                     Key([], "w", lazy.spawn(apps["web_browser"])),
-                    Key([], "Return", lazy.spawn(apps["terminal"])),
+                    Key([], "Return", lazy.spawn(apps["nterminal"])),
                     Key([], "e", lazy.spawn(apps["email"])),
                     Key([], "s", lazy.spawn(apps["screenshot_software"])),
                     Key([], "n", lazy.group["󱇚"].dropdown_toggle("notes")),

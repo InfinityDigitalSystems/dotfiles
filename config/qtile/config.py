@@ -17,11 +17,13 @@ def get_wallpaper(folder):
 
 
 search_script = os.path.expanduser("~/.config/qtile/scripts/find_file")
+tmux_browser = os.path.expanduser("~/.config/tmux/scripts/tmux-browser")
 file_man = os.path.expanduser("~/.config/lf/lfrun")
 desktopwallpapers = os.path.expanduser("~/.config/desktopwallpapers/")
 apps = {
     "web_browser": "qutebrowser",
     "terminal": "alacritty -e tmux new-session -A -s tty",
+    "nterminal": f"alacritty -e {tmux_browser}",
     # Launches in a dropdown
     "file_manager": f"alacritty -T 'File Manager' -e tmux new-session -A -s files '{file_man}'",
     "calculator": "qalculate-gtk",  # launches in a dropdown
