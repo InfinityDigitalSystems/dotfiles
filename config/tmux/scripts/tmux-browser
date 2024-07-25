@@ -4,7 +4,7 @@
 sessions=$(tmux list-sessions -F "#S" 2>/dev/null)
 
 # Use fzf to select a session or type a new one
-selected_session=$(echo -e "$sessions\n[new]" | fzf --prompt="Select tmux session: ")
+selected_session=$(echo -e "$sessions\n[new]\n[none]" | fzf --prompt="Select tmux session: ")
 
 if [ "$selected_session" == "[new]" ]; then
   read -p "Enter new session name: " new_session
@@ -14,6 +14,10 @@ if [ "$selected_session" == "[new]" ]; then
     echo "No session name entered. Aborting."
     exit 1
   fi
+elif [ "$selected_session" == "[none]" ]; then
+  echo "No tmux session will be started."
+  fish
+  exit 1
 elif [ -n "$selected_session" ]; then
   tmux attach-session -t "$selected_session"
 else
