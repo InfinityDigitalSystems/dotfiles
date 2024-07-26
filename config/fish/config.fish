@@ -46,3 +46,5 @@ abbr -a mirrora 'sudo reflector --latest 30 --number 10 --sort age --save /etc/p
 # set -Ux LS_COLORS $LS_COLORS'di=0;35:'
 
 set -Ux LS_COLORS $LS_COLORS'ln=01;36:or=31;01:tw=34:ow=34:st=01;34:di=34:pi=33:so=01;35:bd=33;01:cd=33;01:su=01;32:sg=01;32:ex=01;32:fi=00:'
+
+abbr --add ':q' 'exit'
