@@ -37,7 +37,7 @@ apps = {
     "music_player": "spotify",  # Launches in a dropdown
     "password_manager": "bitwarden-desktop",  # Launches in a dropdown
     # "notes": "alacritty -T Notes --working-directory notes -e nvim",
-    "notes": f"alacritty -T 'Notes' -e tmux new-session -A -s notes nvim",
+    "notes": f"alacritty -T --working-directory notes -e tmux new-session -A -s notes nvim",
 }
 
 colors = {
