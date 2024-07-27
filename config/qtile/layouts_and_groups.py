@@ -1,5 +1,5 @@
 from libqtile import layout
-from libqtile.config import Group, ScratchPad, DropDown, Match
+from libqtile.config import DropDown, Group, Match, ScratchPad
 
 
 class Layouts:
@@ -11,6 +11,14 @@ class Layouts:
         layouts = [
             layout.Max(),
             layout.Columns(
+                margin=0,
+                margin_on_single=30,
+                border_width=2,
+                grow_amount=5,
+                border_normal=self.colors["dark1"],
+                border_focus=self.colors["blue"],
+            ),
+            layout.VerticalTile(
                 margin=0,
                 margin_on_single=30,
                 border_width=2,
@@ -62,7 +70,7 @@ class Groups:
             Group("7", layout="columns"),
             Group("8", layout="columns"),
             Group("9", layout="columns"),
-            Group("0", layout="columns"),
+            Group("0", layout="VerticalTile"),
             Group("Q", layout="columns"),
             Group("W", layout="columns"),
             Group("E", layout="columns", matches=[Match(wm_class="Mail")]),
@@ -83,7 +91,7 @@ class Groups:
             # System dropdowns
             DropDown(
                 "bluetooth",
-                "kitty -T Bluetooth -e blueberry",
+                "blueman-manager",
                 **default_dropdown_settings,
             ),
             DropDown(
@@ -93,14 +101,16 @@ class Groups:
             ),
             DropDown(
                 "power_manager",
-                "kitty -T Power -e sudo powertop",
+                "alacritty -e bash -c 'sudo powertop; exec bash'",
                 **default_dropdown_settings,
             ),
-            DropDown("calendar", "kitty -e cal", **default_dropdown_settings),
-            # User Apps
             DropDown(
-                "terminal", f'{apps["terminal"]}', **default_dropdown_settings
+                "calendar",
+                "alacritty -e bash -c 'clear; cal -3; exec bash'",
+                **default_dropdown_settings,
             ),
+            # User Apps
+            DropDown("terminal", f'{apps["terminal"]}', **default_dropdown_settings),
             DropDown(
                 "file_manager",
                 apps["file_manager"],
@@ -119,8 +129,7 @@ class Groups:
                 x=0.35,
                 y=0.0,
             ),
-            DropDown("music_player",
-                     apps["music_player"], **default_dropdown_settings),
+            DropDown("music_player", apps["music_player"], **default_dropdown_settings),
             DropDown(
                 "notes",
                 apps["notes"],

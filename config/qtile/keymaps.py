@@ -219,6 +219,11 @@ class Keybinds:
         ]
 
         self.window_manipulation = [
+            Key(
+                ["shift"],
+                "r",
+                lazy.layout.normalize(),
+            ),
             # Resize Keys
             Key(
                 ["shift"],
