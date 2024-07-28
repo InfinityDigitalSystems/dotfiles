@@ -14,7 +14,7 @@ COLORS = {
 def infinity_dark(c):
     c.prompt.radius = 0  # Rounding radius (in pixels) for the edges of prompts.
 
-    c.fonts.default_size = "10pt"
+    c.fonts.default_size = "11pt"
     c.fonts.default_family = "JetBrainsMono NFM"
     c.fonts.web.family.standard = "JetBrainsMono NFM"
     c.fonts.web.family.serif = "JetBrainsMono NFM"
@@ -28,7 +28,7 @@ def infinity_dark(c):
 
     # Height (in pixels or as percentage of the window) of the completion.
     # Type: PercOrInt
-    c.completion.height = "33%"
+    c.completion.height = "40%"
 
     # Where to show the downloaded files.
     # Type: VerticalPosition
@@ -46,7 +46,7 @@ def infinity_dark(c):
     # so big favicons also require extra `tabs.padding`.
     c.tabs.favicons.scale = 1
     # Padding (in pixels) around text for tabs.
-    c.tabs.padding = {"bottom": 1, "left": 4, "right": 4, "top": 1}
+    c.tabs.padding = {"bottom": 2, "left": 4, "right": 4, "top": 2}
 
     # Completion Background
     c.colors.completion.odd.bg = COLORS["dark"]
