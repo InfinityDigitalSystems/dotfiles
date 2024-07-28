@@ -70,7 +70,7 @@ class Groups:
             Group("7", layout="columns"),
             Group("8", layout="columns"),
             Group("9", layout="columns"),
-            Group("0", layout="VerticalTile"),
+            Group("0", layout="verticalTile"),
             Group("Q", layout="columns"),
             Group("W", layout="columns"),
             Group("E", layout="columns", matches=[Match(wm_class="Mail")]),
