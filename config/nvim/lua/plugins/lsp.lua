@@ -24,21 +24,13 @@ return {
 		require("fidget").setup()
 		require("mason").setup()
 		local lspconfig = require("lspconfig")
-		lspconfig.phpactor.setup({
-			settings = {
-				["phpactor"] = {
-					on_attach = on_attach,
-					capabilities = capabilities,
-				},
-			},
-		})
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls", -- LUA
 				"html", -- HTML
 				"cssls", -- CSS
 				"jedi_language_server", -- Python
-				-- "phpactor", -- PHP
+				"phpactor", -- PHP
 				"intelephense", -- PHP
 			},
 
@@ -49,20 +41,6 @@ return {
 						-- capabilities = capabilities,
 					})
 				end,
-				["phpactor"] = function()
-					require("lspconfig").phpactor.setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-						default_config = {
-							cmd = { "phpactor", "language-server", "-vvv" },
-							filetypes = { "php" },
-							root_dir = function()
-								return vim.fn.expand("%:p:h")
-							end,
-						},
-					})
-				end,
-
 				["lua_ls"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.lua_ls.setup({

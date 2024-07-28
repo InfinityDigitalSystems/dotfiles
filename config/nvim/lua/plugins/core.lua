@@ -58,6 +58,8 @@ end
 
 m[3].config = function()
 	require("Comment").setup()
+	local ft = require("Comment.ft")
+	ft.php = { "//%s", "/*%s*/" }
 end
 
 m[4].config = function()
