@@ -8,7 +8,7 @@
 
 - run `./arch_package_sync.sh` to install all dependencies plus core utils
 - copy contents from `./config` to `~/.config`
-- copy bashrc and xconfigs from `./other` to home directory (`~`)
+- `./other` contains app shortcuts, bashrc etc
 
 ## Screenshots
 

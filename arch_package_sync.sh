@@ -2,11 +2,13 @@
 
 # List of packages from the official repositories
 official_packages=(
+  gnome-themes-extra
   file-roller
   tldr
   tmux
   alacritty 
   arandr 
+  glow
   autorandr
   base-devel 
   bat 
@@ -120,22 +122,8 @@ aur_packages=(
   brave-bin 
   spotify
   cp-p-git
-  # rofi-lbonn-wayland-git
 )
 
-# List of packages to remove
-packages_to_remove=(
-  pasystray
-  perl-image-exiftool 
-  chafa 
-  mcomix 
-  pyright 
-  glow
-  strace
-  sshfs
-  languagetool
-  network-manager-applet
- )
 
 # Remove packages
 # Loop through each package and remove it if installed
