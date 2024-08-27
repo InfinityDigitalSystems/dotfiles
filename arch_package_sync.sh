@@ -105,10 +105,12 @@ lf_official_packages=(
   gnumeric 
   fzf
   trash-cli
+  spotify-launcher
 )
 # AUR
   lf_aur_packages=(
   xapp-epub-thumbnailer
+  spotify
   wkhtmltopdf-static
 )
 
@@ -120,7 +122,6 @@ aur_packages=(
   unclutter-xfixes-git 
   ueberzugpp
   brave-bin 
-  spotify
   cp-p-git
 )
 

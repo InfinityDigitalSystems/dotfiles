@@ -34,7 +34,7 @@ apps = {
     "task_switcher": "rofi -show window -monitor -1 -theme infinity-list",
     "clipboard": "env CM_LAUNCHER='rofi' clipmenu",
     "find_file": f"alacritty -T File\ Finder -e {search_script}",
-    "music_player": "spotify",  # Launches in a dropdown
+    "music_player": "spotify-launcher",  # Launches in a dropdown
     "password_manager": "bitwarden-desktop",  # Launches in a dropdown
     "notes": f"alacritty -T Notes --working-directory notes -e tmux new-session -A -s notes nvim",
 }
